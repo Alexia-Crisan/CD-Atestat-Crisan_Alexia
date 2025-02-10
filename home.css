@@ -1,0 +1,211 @@
+body {
+    margin: 0;
+    background-color: rgb(154, 203, 208);
+    background-image: url("./Poze/tiny-grid.png");
+    font-family: "Kumbh Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+    overflow-x: hidden;
+  }
+
+  img {
+    border-bottom: 3px solid rgb(41, 115, 178);
+    border-right: 3px solid rgb(41, 115, 178);
+  }
+
+  .navwhole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100pw;
+    padding-top: 20px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(41, 115, 178);
+    height: 60px;
+    width: 80%;
+    border-radius: 50px 20px;
+  }
+
+  .navhalf {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    align-items: center;
+    height: 60px;
+    width: 50%;
+  }
+
+  .navtextleft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    height: 60px;
+    color: rgb(242, 239, 231);
+  }
+
+  .navtextright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    height: 60px;
+    flex: 1;
+    color: rgb(242, 239, 231);
+  }
+
+  a:link {
+    color: rgb(242, 239, 231);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: rgb(242, 239, 231);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(154, 203, 208);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .writingsection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    padding-top: 50px;
+    padding-bottom: 40px;
+  }
+
+  .writingsection60 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    height: 400px;
+  }
+
+  .writingsection60half {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 400px;
+    width: 50%;
+  }
+
+  .textcontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .maintext {
+    font-size: 60px;
+    color: rgb(41, 115, 178);
+    margin: 0;
+    text-align: center;
+  }
+
+  .buttoncontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 25px;
+  }
+
+  .button {
+    font-family: "Kumbh Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+
+    background-color: rgb(242, 239, 231);
+    border: 3px solid black;
+    border-color: rgb(41, 115, 178);
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 4px 2px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+  .button1 {
+    color: rgb(41, 115, 178);
+    border: 2px solidrgb(41, 115, 178);
+    font-weight: bold;
+  }
+
+  .button1:hover {
+    border-color: rgb(41, 115, 178);
+    background-color: rgb(41, 115, 178);
+    color: rgb(242, 239, 231);
+    font-weight: bold;
+  }
+
+  .button2 {
+    color: rgb(41, 115, 178);
+    border: 2px solidrgb(41, 115, 178);
+    font-weight: bold;
+  }
+
+  .button2:hover {
+    border-color: rgb(41, 115, 178);
+    background-color: rgb(41, 115, 178);
+    color: rgb(242, 239, 231);
+    font-weight: bold;
+  }
+
+  .sponsorcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(41, 115, 178);
+    height: 250px;
+    width: 100vw;
+  }
+
+  .sponsorcontainer80 {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 200px;
+    width: 75%;
+  }
+
+  .sponsorcontainerrow {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    gap: 15px;
+  }
+
+  .sponsorimgtext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 10px;
+    color: rgb(242, 239, 231);
+    font-weight: bold;
+  }

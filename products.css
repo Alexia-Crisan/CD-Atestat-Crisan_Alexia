@@ -1,0 +1,232 @@
+body {
+    margin: 0;
+    background-color: rgb(154, 203, 208);
+    background-image: url("./Poze/tiny-grid.png");
+    font-family: "Kumbh Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+    overflow-x: hidden;
+  }
+
+  .navwhole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100pw;
+    padding-top: 20px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(41, 115, 178);
+    height: 60px;
+    width: 80%;
+    border-radius: 50px 20px;
+  }
+
+  .navhalf {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    align-items: center;
+    height: 60px;
+    width: 50%;
+  }
+
+  .navtextleft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    height: 60px;
+    color: rgb(242, 239, 231);
+  }
+
+  .navtextright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    height: 60px;
+    flex: 1;
+    color: rgb(242, 239, 231);
+  }
+
+  a:link {
+    color: rgb(242, 239, 231);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: rgb(242, 239, 231);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(154, 203, 208);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .button {
+    font-family: "Kumbh Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+
+    background-color: rgb(242, 239, 231);
+    border: 3px solid black;
+    border-color: rgb(72, 166, 167);
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.2s;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
+  .button {
+    color: rgb(72, 166, 167);
+    border: 2px solid rgb(72, 166, 167);
+    font-weight: bold;
+  }
+
+  .button:hover {
+    border-color: rgb(72, 166, 167);
+    background-color: rgb(72, 166, 167);
+    color: rgb(242, 239, 231);
+    font-weight: bold;
+  }
+
+  .section{
+    align-items: center;
+    display: flex;
+    width: 100vw;
+    height: 500px;
+    margin-left: 150px;
+    margin-right: 300px;
+    gap: 18px;
+  }
+
+  .leftnav{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 20%;
+    height: 600px;
+  }
+
+  .leftnavsection{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 75%;
+    border-radius: 20px;
+  }
+
+  .productrow{
+    justify-content: space-around;
+    align-items: center;
+    display: flex;
+    width: 915px;
+    height: 600px;
+  }
+
+  .product{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 75%;
+    width: 30%;
+    background-color: rgb(242, 239, 231);
+    border: 2px solid rgb(72, 166, 167);
+    border-radius: 20px;
+  }
+
+  .productphoto{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 60%;
+    width: 100%;
+  }
+
+  .productinfocontainer{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 40%;
+    width: 100%;
+    
+  }
+
+  .productinfo{
+    justify-content: space-around;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: 90%;
+
+  }
+
+  .downpart{
+    justify-content: space-between;
+    align-items: left;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .downparthalf{
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 50%;
+  }
+
+  .textproduct{
+    text-align: left;
+    font-weight: bold;
+  }
+
+  .footerdiv {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: rgb(41, 115, 178);
+    height: 100px;
+    width: 100vw;
+  }
+
+  .footerdivhalf {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 30%;
+  }
+
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+  }
+
+  .fa:hover {
+    opacity: 0.8;
+  }

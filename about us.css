@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    background-color: rgb(154, 203, 208);
+    background-image: url("./Poze/tiny-grid.png");
+    font-family: "Kumbh Sans", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "YOPQ" 300;
+    overflow-x: hidden;
+  }
+
+  img {
+    border-bottom: 3px solid rgb(41, 115, 178);
+    border-right: 3px solid rgb(41, 115, 178);
+    border-radius: 20px;
+  }
+
+  .navwhole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100pw;
+    padding-top: 20px;
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(41, 115, 178);
+    height: 60px;
+    width: 80%;
+    border-radius: 50px 20px;
+  }
+
+  .navhalf {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+    align-items: center;
+    height: 60px;
+    width: 50%;
+  }
+
+  .navtextleft {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    height: 60px;
+    color: rgb(242, 239, 231);
+  }
+
+  .navtextright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    height: 60px;
+    flex: 1;
+    color: rgb(242, 239, 231);
+  }
+
+  a:link {
+    color: rgb(242, 239, 231);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:visited {
+    color: rgb(242, 239, 231);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: rgb(154, 203, 208);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  .ourmission {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 100vw;
+  }
+
+  .ourmissionhalf1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 40%;
+  }
+
+  .ourmissionhalf2 {
+    display: flex;
+    justify-content: center;
+    height: 450px;
+    width: 40%;
+  }
+
+  .footerdiv {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    background-color: rgb(41, 115, 178);
+    height: 100px;
+    width: 100vw;
+  }
+
+  .footerdivhalf {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 30%;
+  }
+
+  .fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+    color: white;
+  }
+
+  .fa:hover {
+    opacity: 0.8;
+  }
