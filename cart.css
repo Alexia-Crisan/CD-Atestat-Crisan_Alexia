@@ -79,6 +79,29 @@ body {
     text-decoration: none;
   }
 
+  .cartcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 550px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-direction: column;
+  }
+
+  .cartbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    height: 80%;
+    background-color: rgb(72, 166, 167);
+    border-radius: 20px;
+    flex-direction: column;
+    font-size: 17px;
+  }
+
   .footerdiv {
     display: flex;
     justify-content: space-around;
