@@ -217,16 +217,13 @@ body {
     width: 30%;
   }
 
-  .fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 30px;
-    text-align: center;
-    text-decoration: none;
-    margin: 5px 2px;
-    border-radius: 50%;
+  .footerdivhalf a {
+    font-size: 26px;  
+    margin: 0 18px;   
+    color: rgb(242, 239, 231);   
+    text-decoration: none; 
   }
 
-  .fa:hover {
-    opacity: 0.8;
+  .footerdivhalf a:hover {
+    opacity: 0.6;
   }

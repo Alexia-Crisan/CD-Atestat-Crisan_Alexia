@@ -12,7 +12,6 @@ body {
   img {
     border-bottom: 3px solid rgb(41, 115, 178);
     border-right: 3px solid rgb(41, 115, 178);
-    border-radius: 20px;
   }
 
   .navwhole {
@@ -78,29 +77,6 @@ body {
     color: rgb(154, 203, 208);
     background-color: transparent;
     text-decoration: none;
-  }
-
-  .ourmission {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 450px;
-    width: 100vw;
-  }
-
-  .ourmissionhalf1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 450px;
-    width: 40%;
-  }
-
-  .ourmissionhalf2 {
-    display: flex;
-    justify-content: center;
-    height: 450px;
-    width: 40%;
   }
 
   .footerdiv {
