@@ -57,25 +57,39 @@
       </p>
       <div class="formbox">
         <form
-          action="./home.html"
+          name="submit-to-google-sheet"
           style="color: rgb(242, 239, 231); font-weight: bold"
         >
           <div class="formline">
             <div style="flex-direction: column">
               <p for="name">First name:</p>
-              <input class="inputbox" type="text" id="name" /><br /><br />
+              <input
+                name="FirstName"
+                class="inputbox"
+                type="text"
+                id="name"
+                required
+              /><br /><br />
             </div>
             <div style="flex-direction: column">
               <p for="name">Last name:</p>
-              <input class="inputbox" type="text" id="lname" /><br /><br />
+              <input
+                name="LastName"
+                class="inputbox"
+                type="text"
+                id="lname"
+                required
+              /><br /><br />
             </div>
           </div>
           <p for="email">Email adress:</p>
           <input
+            name="Email"
             class="inputbox"
             style="width: 460px"
             type="email"
             id="email"
+            required
           /><br /><br />
           <p for="email">Drop us a message.</p>
           <textarea
@@ -88,15 +102,23 @@
               width: 434px;
             "
             id="w3review"
-            name="w3review"
+            name="Text"
             rows="4"
             cols="50"
+            required
           ></textarea
           ><br /><br />
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 100%;
+            "
+          >
+            <button class="button" type="submit">Submit</button>
+          </div>
         </form>
-        <button class="button" onclick="location.href = './home.html'">
-          Submit
-        </button>
       </div>
     </div>
 
@@ -132,5 +154,27 @@
         ></a>
       </div>
     </div>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxFVYE4Z2JWCRM0wVoNw8MB_Qg9m57zn5KZgje6yCPIq-MG6FFqiAfzUmpvcl2iCeEw/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const successMessage = document.getElementById("success-message");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            console.log("Success!", response);
+            form.reset();
+            alert("Your form has been submitted successfully!");
+          })
+          .catch((error) => {
+            console.error("Error!", error.message);
+            alert("There was an error submitting the form. Please try again.");
+          });
+      });
+    </script>
   </body>
 </html>
