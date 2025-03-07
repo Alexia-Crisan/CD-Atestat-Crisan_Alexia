@@ -9,11 +9,18 @@ body {
     overflow-x: hidden;
   }
 
-  img {
+  img{
     border-bottom: 3px solid rgb(41, 115, 178);
     border-right: 3px solid rgb(41, 115, 178);
     border-radius: 20px;
   }
+
+  #map {
+    border-bottom: 3px solid rgb(41, 115, 178);
+    border-right: 3px solid rgb(41, 115, 178);
+    border-radius: 20px;
+    opacity: 0.9;
+}
 
   .navwhole {
     display: flex;
