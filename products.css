@@ -110,11 +110,9 @@ body {
   .section{
     align-items: center;
     display: flex;
-    width: 100vw;
+    justify-content: space-around;
     height: 500px;
-    margin-left: 150px;
-    margin-right: 300px;
-    gap: 18px;
+    width: 100%;   
   }
 
   .leftnav{
@@ -135,11 +133,13 @@ body {
   }
 
   .productrow{
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     display: flex;
-    width: 915px;
+    /* width: 915px; */
     height: 600px;
+    width: 100%;
+    gap: 30px;
   }
 
   .product{
@@ -148,7 +148,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 75%;
-    width: 30%;
+    width: 275px;
     background-color: rgb(242, 239, 231);
     border: 2px solid rgb(72, 166, 167);
     border-radius: 20px;

@@ -26,6 +26,13 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <style>
+      input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+      }
+    </style>
   </head>
   <body>
     <div class="navwhole">
@@ -52,1576 +59,1719 @@
       </div>
     </div>
 
-    <div class="section" style="padding-top: 40px">
-      <div class="leftnav">
+    <div
+      style="
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        margin: 40px 40px;
+        background-color: red;
+      "
+    >
+      <div
+        class="leftnavsection"
+        style="
+          background-color: rgb(72, 166, 167);
+          flex-direction: column;
+          width: 275px;
+          margin-top: 25px;
+          height: 450px;
+        "
+      >
+        <p
+          style="
+            font-weight: bold;
+            color: rgb(242, 239, 231);
+            font-size: 18px;
+            margin-bottom: 25px;
+          "
+        >
+          Apply a filter:<br />
+          __________
+        </p>
+
         <div
-          class="leftnavsection"
-          style="background-color: rgb(72, 166, 167)"
-        ></div>
-      </div>
-
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/dosare.png" />
+          style="
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: flex-start;
+          "
+        >
+          <div
+            name="checkboxdiv"
+            id="checkboxdiv"
+            style="
+              display: flex;
+              justify-content: space-around;
+              flex-direction: row;
+              color: rgb(242, 239, 231);
+            "
+          >
+            <input
+              onclick="filterSelection('WritingSupplies')"
+              class="cbox"
+              type="checkbox"
+              id="WritingSupplies"
+              name="WritingSupplies"
+              value="Bike"
+              size="20px"
+            />
+            <label for="WritingSupplies"> Writing Supplies </label>
           </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Plastic File Folder with Metal Clip – Transparent, A4 Size
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">5.50 RON </span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs1.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
+          <br />
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              flex-direction: row;
+              color: rgb(242, 239, 231);
+            "
+          >
+            <input
+              onclick="filterSelection('KitchenEssentials')"
+              class="cbox"
+              type="checkbox"
+              id="KitchenEssentials"
+              name="KitchenEssentials"
+              value="Bike"
+              size="20px"
+            />
+            <label for="Dorm&KitchenEssentials">
+              Dorm & Kitchen Essentials
+            </label>
           </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/folii.png" />
+          <br />
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              flex-direction: row;
+              color: rgb(242, 239, 231);
+            "
+          >
+            <input
+              onclick="filterSelection('Hygiene&PersonalCare')"
+              class="cbox"
+              type="checkbox"
+              id="Hygiene&PersonalCare"
+              name="Hygiene&PersonalCare"
+              value="Bike"
+              size="20px"
+            />
+            <label for="Hygiene&PersonalCare"> Hygiene & Personal Care </label>
           </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Clear Document Sleeves – Pack of 100, A4 Sheet Protectors
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 3.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">14.99 RON</span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs2.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/caiet.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">Basic Notebook, A4, 48 Pages – Pigna</p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">9.75 RON</span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs3.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
+          <br />
+          <div
+            style="
+              display: flex;
+              justify-content: space-around;
+              flex-direction: row;
+              color: rgb(242, 239, 231);
+            "
+          >
+            <input
+              onclick="filterSelection('StarterKits')"
+              class="cbox"
+              type="checkbox"
+              id="StarterKits"
+              name="StarterKits"
+              value="Bike"
+              size="20px"
+            />
+            <label for="StarterKits"> Starter Kits </label>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/bic1.png" />
-          </div>
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+          width: 75%;
+          background-color: blue;
+        "
+        name="toate produsele"
+      >
+        <div class="section" style="background-color: green">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/dosare.png" />
+              </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                BIC Cristal Soft Ballpoint Pens – Blue Ink, Pack of 4
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >11.90 RON
-                    </span>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Plastic File Folder with Metal Clip – Transparent, A4 Size
                   </p>
-                </div>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs4.html'"
-                  >
-                    See more
-                  </button>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >5.50 RON
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs1.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/folii.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Clear Document Sleeves – Pack of 100, A4 Sheet Protectors
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 3.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >14.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs2.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/caiet.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Basic Notebook, A4, 48 Pages – Pigna
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >9.75 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs3.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="240px" width="210px" src="./Poze/bic2.png" />
-          </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                BIC Cristal Multicolor Ballpoint Pens – 15 Assorted Colors
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/bic1.png" />
+              </div>
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >24.50 RON
-                    </span>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    BIC Cristal Soft Ballpoint Pens – Blue Ink, Pack of 4
                   </p>
-                </div>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs5.html'"
-                  >
-                    See more
-                  </button>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >11.90 RON
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs4.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="240px" width="210px" src="./Poze/bic2.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    BIC Cristal Multicolor Ballpoint Pens – 15 Assorted Colors
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >24.50 RON
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs5.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/capsator.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Mini Stapler – No. 10, Assorted Colors
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >8.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs6.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/capsator.png" />
-          </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">Mini Stapler – No. 10, Assorted Colors</p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/capse.png" />
+              </div>
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">8.99 RON</span>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Staples No. 24/6 – Pack of 1000, Standard Office Use
                   </p>
-                </div>
+                  <img height="20px" width="110px" src="./Poze/star 3.png" />
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs6.html'"
-                  >
-                    See more
-                  </button>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >6.25 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs7.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/creioane.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">Wooden Pencils – HB, Pack of 12</p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >14.80 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs8.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img
+                  height="210px"
+                  width="210px"
+                  src="./Poze/stationary kit.png"
+                />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Stationery Kit – Complete Office & School Supplies Set
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold">
+                          89.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs30.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/capse.png" />
-          </div>
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/tigaie.png" />
+              </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Staples No. 24/6 – Pack of 1000, Standard Office Use
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 3.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">6.25 RON</span>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Tefal Non-Stick Frying Pan – 28cm, Scratch-Resistant
                   </p>
-                </div>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs7.html'"
-                  >
-                    See more
-                  </button>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >129.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs10.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="240px" width="210px" src="./Poze/farfurie.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Ceramic Dinner Plate – Modern Design, 26cm
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold">
+                          24.90 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs11.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/bol.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Speckled Ceramic Bowl – Vintage Style, 500ml
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >14.75 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs12.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/creioane.png" />
-          </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">Wooden Pencils – HB, Pack of 12</p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/caserola.png" />
+              </div>
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">14.80 RON</span>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Airtight Food Storage Container – 1.2L, BPA-Free
                   </p>
-                </div>
+                  <img height="20px" width="110px" src="./Poze/star 3.png" />
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs8.html'"
-                  >
-                    See more
-                  </button>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >29.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs13.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/tacam.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Elegant Stainless Steel Cutlery Set – 5 Pieces, Service for
+                    1
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >100.50 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs14.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/halat.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Luxury Bathrobe – Ultra Soft, Unisex
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >119.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs15.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/oala.png" />
-          </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Presto Stainless Steel Saucepan with Lid – 1L Capacity
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/lingura.png" />
+              </div>
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">59.99 RON</span>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Wooden Cooking Spoon – 30cm, Natural Beechwood
                   </p>
-                </div>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs9.html'"
-                  >
-                    See more
-                  </button>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >9.99 RON
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs16.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/lumini.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Copper Wire Fairy Lights – Battery Powered, 10m
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >49.90 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs17.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/lampa.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    LED Desk Lamp – Adjustable Brightness, USB Powered
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >99.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs18.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/tigaie.png" />
-          </div>
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="190px" width="210px" src="./Poze/cutie.png" />
+              </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Tefal Non-Stick Frying Pan – 28cm, Scratch-Resistant
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >129.99 RON</span
-                    >
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Plastic Storage Box with Lid – 30L Capacity
                   </p>
-                </div>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs10.html'"
-                  >
-                    See more
-                  </button>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >79.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs19.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/pat.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Premium Cotton Bedding Set – Soft & Breathable, Twin Size
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >179.90 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs20.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/patura.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Decorative Throw Blanket – Plush & Cozy, 150x200cm
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >99.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs21.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="240px" width="210px" src="./Poze/farfurie.png" />
-          </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Ceramic Dinner Plate – Modern Design, 26cm
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/sampon.png" />
+              </div>
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">
-                      24.90 RON</span
-                    >
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Moisturizing Shampoo – 500ml, Nourishing Formula
                   </p>
-                </div>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs11.html'"
-                  >
-                    See more
-                  </button>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >24.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs22.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/dus.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Coconut & Vanilla Shower Gel – 500ml, Hydrating
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >19.95 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs23.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/periuta.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Soft Bristle Toothbrush – Ergonomic Handle, Medium
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >11.75 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs24.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/bol.png" />
-          </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Speckled Ceramic Bowl – Vintage Style, 500ml
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/pasta.png" />
+              </div>
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">14.75 RON</span>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Whitening Toothpaste – 75ml, Enamel Safe
                   </p>
-                </div>
+                  <img height="20px" width="110px" src="./Poze/star 3.png" />
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs12.html'"
-                  >
-                    See more
-                  </button>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >15.50 RON
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs25.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/sapun.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Jasmine & Vanilla Liquid Hand Soap – 500ml, Gentle on Skin
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >17.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs26.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/crema.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Hydrating Body Lotion – 500ml, Fast-Absorbing
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >34.50 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs27.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/caserola.png" />
-          </div>
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/ata.png" />
+              </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Airtight Food Storage Container – 1.2L, BPA-Free
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 3.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">29.99 RON</span>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Oral-B Essential Dental Floss – 50m, Waxed
                   </p>
-                </div>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs13.html'"
-                  >
-                    See more
-                  </button>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >22.99 RON
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs28.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/servetele.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    AquaCare – Refreshing Wipes, Aloe Vera
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >19.99 RON
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs9.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img
+                  height="210px"
+                  width="210px"
+                  src="./Poze/hygiene kit.png"
+                />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">
+                    Hygiene Kit – Travel-Friendly Personal Care Essentials
+                  </p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >149.99 RON
+                        </span>
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs31.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/tacam.png" />
-          </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Elegant Stainless Steel Cutlery Set – 5 Pieces, Service for 1
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/1.png" />
+              </div>
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >100.50 RON</span
-                    >
-                  </p>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Mind & Wellness" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >529.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs29.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs14.html'"
-                  >
-                    See more
-                  </button>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/1.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"The Organized Student" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >189.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs32.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/2.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Tech Power" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >4,299.49 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs33.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/halat.png" />
-          </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">Luxury Bathrobe – Ultra Soft, Unisex</p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/3.png" />
+              </div>
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >119.99 RON</span
-                    >
-                  </p>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Always Online" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 3.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >289.79 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs34.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/4.png" />
+              </div>
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs15.html'"
-                  >
-                    See more
-                  </button>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Student Survival" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >379.89 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs35.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/5.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Smart Learning" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold">
+                          319.59 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs36.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/lingura.png" />
-          </div>
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/6.png" />
+              </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Wooden Cooking Spoon – 30cm, Natural Beechwood
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Active Student" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">9.99 RON </span>
-                  </p>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >579.29 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs37.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/7.png" />
+              </div>
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs16.html'"
-                  >
-                    See more
-                  </button>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Artists & Designers" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >1,129.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs38.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/8.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Music & Relaxation" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >699.79 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs39.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/lumini.png" />
-          </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Copper Wire Fairy Lights – Battery Powered, 10m
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
+        <div class="section">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/9.png" />
+              </div>
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">49.90 RON</span>
-                  </p>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Savings & Discounts" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >74.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs40.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/10.png" />
+              </div>
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs17.html'"
-                  >
-                    See more
-                  </button>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Dorm Life" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 3.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >749.39 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs41.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/11.png" />
+              </div>
+
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Science Student" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >999.49 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs42.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/lampa.png" />
-          </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                LED Desk Lamp – Adjustable Brightness, USB Powered
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
+        <div class="section" style="padding-bottom: 20px">
+          <div class="productrow">
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/12.png" />
+              </div>
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">99.99 RON</span>
-                  </p>
-                </div>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Gaming & Chill" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
 
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs18.html'"
-                  >
-                    See more
-                  </button>
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >1,499.99 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs43.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/13.png" />
+              </div>
 
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="190px" width="210px" src="./Poze/cutie.png" />
-          </div>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"The Explorer" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 1.png" />
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Plastic Storage Box with Lid – 30L Capacity
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >1,059.79 RON</span
+                        >
+                      </p>
+                    </div>
 
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">79.99 RON</span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs19.html'"
-                  >
-                    See more
-                  </button>
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs44.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/pat.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Premium Cotton Bedding Set – Soft & Breathable, Twin Size
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >179.90 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs20.html'"
-                  >
-                    See more
-                  </button>
-                </div>
+            <div class="product">
+              <div class="productphoto">
+                <img height="210px" width="210px" src="./Poze/14.png" />
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/patura.png" />
-          </div>
 
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Decorative Throw Blanket – Plush & Cozy, 150x200cm
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">99.99 RON</span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs21.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/sampon.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Moisturizing Shampoo – 500ml, Nourishing Formula
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">24.99 RON</span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs22.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/dus.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Coconut & Vanilla Shower Gel – 500ml, Hydrating
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">19.95 RON</span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs23.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/periuta.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Soft Bristle Toothbrush – Ergonomic Handle, Medium
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">11.75 RON</span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs24.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/pasta.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Whitening Toothpaste – 75ml, Enamel Safe
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 3.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >15.50 RON
-                    </span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs25.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/sapun.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Jasmine & Vanilla Liquid Hand Soap – 500ml, Gentle on Skin
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">17.99 RON</span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs26.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/crema.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Hydrating Body Lotion – 500ml, Fast-Absorbing
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">34.50 RON</span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs27.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/ata.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Oral-B Essential Dental Floss – 50m, Waxed
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >22.99 RON
-                    </span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs28.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/cooking kit.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Cooking Student Kit – Essential Kitchen Tools & Utensils
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >199.99 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs29.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/stationary kit.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Stationery Kit – Complete Office & School Supplies Set
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">
-                      89.99 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs30.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/hygiene kit.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">
-                Hygiene Kit – Travel-Friendly Personal Care Essentials
-              </p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >149.99 RON
-                    </span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs31.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/1.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"The Organized Student" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >189.99 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs32.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/2.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Tech Power" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >4,299.49 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs33.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/3.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Always Online" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 3.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >289.79 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs34.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/4.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Student Survival" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >379.89 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs35.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/5.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Smart Learning" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">
-                      319.59 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs36.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/6.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Active Student" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >579.29 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs37.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/7.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Artists & Designers" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >1,129.99 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs38.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/8.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Music & Relaxation" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >699.79 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs39.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/9.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Savings & Discounts" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold">74.99 RON</span>
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs40.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/10.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Dorm Life" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 3.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >749.39 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs41.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/11.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Science Student" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >999.49 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs42.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section" style="padding-bottom: 20px">
-      <div class="leftnav">
-        <div class="leftnavsection"></div>
-      </div>
-      <div class="productrow">
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/12.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Gaming & Chill" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >1,499.99 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs43.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/13.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"The Explorer" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 1.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >1,059.79 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs44.html'"
-                  >
-                    See more
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product">
-          <div class="productphoto">
-            <img height="210px" width="210px" src="./Poze/14.png" />
-          </div>
-
-          <div class="productinfocontainer">
-            <div class="productinfo">
-              <p class="textproduct">"Work-from-Home" Package</p>
-              <img height="20px" width="110px" src="./Poze/star 2.png" />
-
-              <div class="downpart">
-                <div class="downparthalf">
-                  <p style="color: gray; align-items: flex-start">
-                    in stock<br />
-                    <span style="color: red; font-weight: bold"
-                      >1,399.69 RON</span
-                    >
-                  </p>
-                </div>
-
-                <div class="downparthalf" style="align-items: right">
-                  <button
-                    class="button"
-                    onclick="location.href = './produs45.html'"
-                  >
-                    See more
-                  </button>
+              <div class="productinfocontainer">
+                <div class="productinfo">
+                  <p class="textproduct">"Work-from-Home" Package</p>
+                  <img height="20px" width="110px" src="./Poze/star 2.png" />
+
+                  <div class="downpart">
+                    <div class="downparthalf">
+                      <p style="color: gray; align-items: flex-start">
+                        in stock<br />
+                        <span style="color: red; font-weight: bold"
+                          >1,399.69 RON</span
+                        >
+                      </p>
+                    </div>
+
+                    <div class="downparthalf" style="align-items: right">
+                      <button
+                        class="button"
+                        onclick="location.href = './produs45.html'"
+                      >
+                        See more
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1662,5 +1812,51 @@
         ></a>
       </div>
     </div>
+
+    <script>
+      filterSelection("all");
+      function filterSelection(c) {
+        var x, i;
+        x = document.getElementsByClassName("product");
+        if (c == "all") c = "";
+        for (i = 0; i < x.length; i++) {
+          w3RemoveClass(x[i], "show");
+          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        }
+      }
+
+      function w3AddClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          if (arr1.indexOf(arr2[i]) == -1) {
+            element.className += " " + arr2[i];
+          }
+        }
+      }
+
+      function w3RemoveClass(element, name) {
+        var i, arr1, arr2;
+        arr1 = element.className.split(" ");
+        arr2 = name.split(" ");
+        for (i = 0; i < arr2.length; i++) {
+          while (arr1.indexOf(arr2[i]) > -1) {
+            arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+        }
+        element.className = arr1.join(" ");
+      }
+
+      var btnContainer = document.getElementById("checkboxdiv");
+      var btns = btnContainer.getElementsByClassName("cbox");
+      for (var i = 0; i < btns.length; i++) {
+        if (btns[i].checked == true) {
+          var current = document.getElementsByClassName("active");
+          current[0].className = current[0].className.replace(" active", "");
+          this.className += " active";
+        }
+      }
+    </script>
   </body>
 </html>
