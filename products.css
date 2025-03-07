@@ -110,10 +110,14 @@ body {
   .section{
     align-items: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 500px;
     width: 100%;   
   }
+
+  .productrow {
+    min-height: 600px;
+}
 
   .leftnav{
     justify-content: center;
@@ -133,13 +137,14 @@ body {
   }
 
   .productrow{
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     display: flex;
     /* width: 915px; */
     height: 600px;
     width: 100%;
     gap: 30px;
+    
   }
 
   .product{
@@ -148,7 +153,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 75%;
-    width: 275px;
+    width: 315px;
     background-color: rgb(242, 239, 231);
     border: 2px solid rgb(72, 166, 167);
     border-radius: 20px;
@@ -226,4 +231,9 @@ body {
 
   .footerdivhalf a:hover {
     opacity: 0.6;
+  }
+
+  .hidden {
+    visibility: hidden;
+    height: auto; 
   }
