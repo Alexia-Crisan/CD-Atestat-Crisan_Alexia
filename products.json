@@ -1,0 +1,275 @@
+[
+    {
+      "id": 1,
+      "name": "Plastic File Folder with Metal Clip – Transparent, A4 Size",
+      "price": 5.50,
+      "image": "./Poze/dosare.png"
+    },
+    {
+      "id": 2,
+      "name": "Clear Document Sleeves – Pack of 100, A4 Sheet Protectors",
+      "price": 14.99,
+      "image": "./Poze/folii.png"
+    },
+    {
+      "id": 3,
+      "name": "Basic Notebook, A4, 48 Pages – Pigna",
+      "price": 9.75,
+      "image": "./Poze/caiet.png"
+    },
+    {
+      "id": 4,
+      "name": "BIC Cristal Soft Ballpoint Pens – Blue Ink, Pack of 4",
+      "price": 11.90,
+      "image": "./Poze/bic1.png"
+    },
+    {
+      "id": 5,
+      "name": "BIC Cristal Multicolor Ballpoint Pens – 15 Assorted Colors",
+      "price": 24.50,
+      "image": "./Poze/bic2.png"
+    },
+    {
+      "id": 6,
+      "name": "Mini Stapler – No. 10, Assorted Colors",
+      "price": 8.99,
+      "image": "./Poze/capsator.png"
+    },
+    {
+      "id": 7,
+      "name": "Staples No. 24/6 – Pack of 1000, Standard Office Use",
+      "price": 6.25,
+      "image": "./Poze/capse.png"
+    },
+    {
+      "id": 8,
+      "name": "Wooden Pencils – HB, Pack of 12",
+      "price": 14.80,
+      "image": "./Poze/creioane.png"
+    },
+    {
+        "id": 9,
+        "name": "Stationery Kit – Complete Office & School Supplies Set",
+        "price": 89.99,
+        "image": "./Poze/stationary kit.png"
+    },
+    {
+      "id": 10,
+      "name": "Tefal Non-Stick Frying Pan – 28cm, Scratch-Resistant",
+      "price": 129.99,
+      "image": "./Poze/tigaie.png"
+    },
+    {
+      "id": 11,
+      "name": "Ceramic Dinner Plate – Modern Design, 26cm",
+      "price": 24.90,
+      "image": "./Poze/farfurie.png"
+    },
+    {
+      "id": 12,
+      "name": "Speckled Ceramic Bowl – Vintage Style, 500ml",
+      "price": 14.75,
+      "image": "./Poze/bol.png"
+    },
+    {
+      "id": 13,
+      "name": "Airtight Food Storage Container – 1.2L, BPA-Free",
+      "price": 29.99,
+      "image": "./Poze/caserola.png"
+    },
+    {
+      "id": 14,
+      "name": "Elegant Stainless Steel Cutlery Set – 5 Pieces, Service for 1",
+      "price": 100.50,
+      "image": "./Poze/tacam.png"
+    },
+    {
+      "id": 15,
+      "name": "Luxury Bathrobe – Ultra Soft, Unisex",
+      "price": 119.99,
+      "image": "./Poze/halat.png"
+    },
+    {
+      "id": 16,
+      "name": "Wooden Cooking Spoon – 30cm, Natural Beechwood",
+      "price": 9.99,
+      "image": "./Poze/lingura.png"
+    },
+    {
+      "id": 17,
+      "name": "Copper Wire Fairy Lights – Battery Powered, 10m",
+      "price": 49.90,
+      "image": "./Poze/lumini.png"
+    },
+    {
+      "id": 18,
+      "name": "LED Desk Lamp – Adjustable Brightness, USB Powered",
+      "price": 99.99,
+      "image": "./Poze/lampa.png"
+    },
+    {
+      "id": 19,
+      "name": "Plastic Storage Box with Lid – 30L Capacity",
+      "price": 79.99,
+      "image": "./Poze/cutie.png"
+    },
+    {
+      "id": 20,
+      "name": "Premium Cotton Bedding Set – Soft & Breathable, Twin Size",
+      "price": 179.90,
+      "image": "./Poze/pat.png"
+    },
+    {
+      "id": 21,
+      "name": "Decorative Throw Blanket – Plush & Cozy, 150x200cm",
+      "price": 99.99,
+      "image": "./Poze/patura.png"
+    },
+    {
+      "id": 22,
+      "name": "Moisturizing Shampoo – 500ml, Nourishing Formula",
+      "price": 24.99,
+      "image": "./Poze/sampon.png"
+    },
+    {
+      "id": 23,
+      "name": "Coconut & Vanilla Shower Gel – 500ml, Hydrating",
+      "price": 19.95,
+      "image": "./Poze/dus.png"
+    },
+    {
+      "id": 24,
+      "name": "Soft Bristle Toothbrush – Ergonomic Handle, Medium",
+      "price": 11.75,
+      "image": "./Poze/periuta.png"
+    },
+    {
+      "id": 25,
+      "name": "Whitening Toothpaste – 75ml, Enamel Safe",
+      "price": 15.50,
+      "image": "./Poze/pasta.png"
+    },
+    {
+      "id": 26,
+      "name": "Jasmine & Vanilla Liquid Hand Soap – 500ml, Gentle on Skin",
+      "price": 17.99,
+      "image": "./Poze/sapun.png"
+    },
+    {
+      "id": 27,
+      "name": "Hydrating Body Lotion – 500ml, Fast-Absorbing",
+      "price": 34.50,
+      "image": "./Poze/crema.png"
+    },
+    {
+      "id": 28,
+      "name": "Oral-B Essential Dental Floss – 50m, Waxed",
+      "price": 22.99,
+      "image": "./Poze/ata.png"
+    },
+
+    {
+        "id": 29,
+        "name": "AquaCare – Refreshing Wipes, Aloe Vera",
+        "price": 19.99,
+        "image": "./Poze/servetele.png"
+    },
+
+    {
+        "id": 30,
+        "name": "Hygiene Kit – Travel-Friendly Personal Care Essentials",
+        "price": 149.99,
+        "image": "./Poze/hygiene kit.png"
+    },
+
+    {
+      "id": 31,
+      "name": "\"Mind & Wellness\" Package",
+      "price": 529.99,
+      "image": "./Poze/15.png"
+    },
+    {
+      "id": 32,
+      "name": "\"The Organized Student\" Package",
+      "price": 189.99,
+      "image": "./Poze/1.png"
+    },
+    {
+        "id": 33,
+        "name": "\"Tech Power\" Package",
+        "price": 4299.99,
+        "image": "./Poze/2.png"
+    },
+    {
+        "id": 34,
+        "name": "\"Always Online\" Package",
+        "price": 289.79,
+        "image": "./Poze/3.png"
+    },
+    {
+        "id": 35,
+        "name": "\"Student Survival\" Package",
+        "price": 379.89,
+        "image": "./Poze/4.png"
+    },
+    {
+        "id": 36,
+        "name": "\"Smart Learning\" Package",
+        "price": 319.59,
+        "image": "./Poze/5.png"
+    },
+    {
+        "id": 37,
+        "name": "\"Active Student\" Package",
+        "price": "579.29 RON",
+        "image": "./Poze/6.png"
+    },
+    {
+        "id": 38,
+        "name": "\"Artists & Designers\" Package",
+        "price": 1129.99,
+        "image": "./Poze/7.png"
+    },
+    {
+        "id": 39,
+        "name": "\"Music & Relaxation\" Package",
+        "price": 699.79,
+        "image": "./Poze/8.png"
+    },
+    {
+        "id": 40,
+        "name": "\"Savings & Discounts\" Package",
+        "price": 74.99,
+        "image": "./Poze/9.png"
+    },
+    {
+        "id": 41,
+        "name": "\"Dorm Life\" Package",
+        "price": 749.39,
+        "image": "./Poze/10.png"
+    },
+    {
+        "id": 42,
+        "name": "\"Science Student\" Package",
+        "price": 999.49,
+        "image": "./Poze/11.png"
+    },
+    {
+        "id": 43,
+        "name": "\"Gaming & Chill\" Package",
+        "price": 1499.99,
+        "image": "./Poze/12.png"
+    },
+    {
+        "id": 44,
+        "name": "\"The Explorer\" Package",
+        "price": 1059.79,
+        "image": "./Poze/13.png"
+    },
+    {
+        "id": 45,
+        "name": "\"Work-from-Home\" Package",
+        "price": 1399.69,
+        "image": "./Poze/14.png"
+    }
+]

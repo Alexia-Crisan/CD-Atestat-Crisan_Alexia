@@ -22,6 +22,7 @@
       referrerpolicy="no-referrer"
     />
   </head>
+
   <body>
     <div class="navwhole">
       <div class="navbar">
@@ -48,7 +49,15 @@
     </div>
 
     <div class="cartcontainer">
-      <div class="cartbox"></div>
+      <div class="cartbox">
+        <div class="cartboxhalf" id="cart-items-container" style="width: 60%">
+          <div class="cartitems"></div>
+        </div>
+        <div class="cartboxhalf" id="cart-total-container" style="width: 40%">
+          <h2>Total: 0.00 RON</h2>
+          <button id="clear-cart">Clear Cart</button>
+        </div>
+      </div>
     </div>
 
     <div class="footerdiv">
@@ -83,5 +92,7 @@
         ></a>
       </div>
     </div>
+
+    <script src="cart.js"></script>
   </body>
 </html>

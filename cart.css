@@ -1,130 +1,242 @@
 body {
-    margin: 0;
-    background-color: rgb(154, 203, 208);
-    background-image: url("./Poze/tiny-grid.png");
-    font-family: "Kumbh Sans", serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "YOPQ" 300;
-    overflow-x: hidden;
-  }
+  margin: 0;
+  background-color: rgb(154, 203, 208);
+  background-image: url("./Poze/tiny-grid.png");
+  font-family: "Kumbh Sans", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "YOPQ" 300;
+  overflow-x: hidden;
+}
 
-  img {
-    border-bottom: 3px solid rgb(41, 115, 178);
-    border-right: 3px solid rgb(41, 115, 178);
-  }
+.navwhole {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  width: 100pw;
+  padding-top: 20px;
+}
 
-  .navwhole {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    width: 100pw;
-    padding-top: 20px;
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(41, 115, 178);
+  height: 60px;
+  width: 80%;
+  border-radius: 50px 20px;
+}
 
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(41, 115, 178);
-    height: 60px;
-    width: 80%;
-    border-radius: 50px 20px;
-  }
+.navhalf {
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  align-items: center;
+  height: 60px;
+  width: 50%;
+}
 
-  .navhalf {
-    display: flex;
-    justify-content: space-between;
-    flex: 1;
-    align-items: center;
-    height: 60px;
-    width: 50%;
-  }
+.navtextleft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  height: 60px;
+  color: rgb(242, 239, 231);
+}
 
-  .navtextleft {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    height: 60px;
-    color: rgb(242, 239, 231);
-  }
+.navtextright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  height: 60px;
+  flex: 1;
+  color: rgb(242, 239, 231);
+}
 
-  .navtextright {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    height: 60px;
-    flex: 1;
-    color: rgb(242, 239, 231);
-  }
+a:link {
+  color: rgb(242, 239, 231);
+  background-color: transparent;
+  text-decoration: none;
+}
 
-  a:link {
-    color: rgb(242, 239, 231);
-    background-color: transparent;
-    text-decoration: none;
-  }
+a:visited {
+  color: rgb(242, 239, 231);
+  background-color: transparent;
+  text-decoration: none;
+}
 
-  a:visited {
-    color: rgb(242, 239, 231);
-    background-color: transparent;
-    text-decoration: none;
-  }
+a:hover {
+  color: rgb(154, 203, 208);
+  background-color: transparent;
+  text-decoration: none;
+}
 
-  a:hover {
-    color: rgb(154, 203, 208);
-    background-color: transparent;
-    text-decoration: none;
-  }
+.cartcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 550px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  flex-direction: column;
+}
 
-  .cartcontainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 550px;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    flex-direction: column;
-  }
+.cartbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: 80%;
+  background-color: rgb(72, 166, 167);
+  border-radius: 20px;
+  flex-direction: rox;
+  font-size: 17px;
+}
 
-  .cartbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60%;
-    height: 80%;
-    background-color: rgb(72, 166, 167);
-    border-radius: 20px;
-    flex-direction: column;
-    font-size: 17px;
-  }
+.cartboxhalf
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  font-size: 17px;
+}
 
-  .footerdiv {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    background-color: rgb(41, 115, 178);
-    height: 100px;
-    width: 100vw;
-  }
+.cartitems
+{
+  display: flex;
+  align-items: center;
+  height: 80%;
+  width: 80%;
+  flex-direction: column;
+  font-size: 17px;
+  gap: 15px;
+  align-items: flex-start;
+}
 
-  .footerdivhalf {
-    display: flex;
-    align-items: center;
-    height: 100px;
-    width: 30%;
-  }
+.item
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 55px;
+  width: 100%;
+  background-color: rgb(154, 203, 208);
+  border-radius: 20px;
+  font-size: 17px;
+  gap: 15px;
+}
 
-  .footerdivhalf a {
-    font-size: 26px;  
-    margin: 0 18px;   
-    color: rgb(242, 239, 231);   
-    text-decoration: none; 
-  }
+.itemphoto
+{
+  margin-left: 10px;
+  height: 40px;
+  width: 40px;
+}
 
-  .footerdivhalf a:hover {
-    opacity: 0.6;
-  }
+.itemname
+{
+  font-size: 12px;
+  color: rgb(41, 115, 178);
+  font-weight: bold;
+  max-width: 200px;
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.totalPrice
+{
+  font-size: 15px;
+  color: rgb(250, 77, 77);
+  font-weight: bold;
+  max-width: 50px;
+  width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.plus
+{
+  margin-right: 10px;
+}
+
+.button .plus, .minus
+{
+  border-radius: 50%;
+  border-color: rgb(41, 115, 178);
+}
+
+.button .minus, .plus
+{
+  border-radius: 50%;
+  border-color: rgb(41, 115, 178);
+}
+
+.cartbox .cartboxhalf .cartitems .item span
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 20px;
+  background-color: rgb(242, 239, 231);
+  color: rgb(41, 115, 178);
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cartbox .cartboxhalf .cartitems .item span {
+  background-color: transparent;
+}
+
+.cartbox .cartboxhalf .cartitems .item span.plus,
+.cartbox .cartboxhalf .cartitems .item span.minus {
+  background-color: rgb(242, 239, 231);
+}
+
+
+.cartbox .cartboxhalf .cartitems
+{
+  overflow: auto;
+}
+
+.cartbox .cartboxhalf::-webkit-scrollbar
+{
+  width: 0;
+}
+
+.footerdiv {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  background-color: rgb(41, 115, 178);
+  height: 100px;
+  width: 100vw;
+}
+
+.footerdivhalf {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 30%;
+}
+
+.footerdivhalf a {
+  font-size: 26px;  
+  margin: 0 18px;   
+  color: rgb(242, 239, 231);   
+  text-decoration: none; 
+}
+
+.footerdivhalf a:hover {
+  opacity: 0.6;
+}
