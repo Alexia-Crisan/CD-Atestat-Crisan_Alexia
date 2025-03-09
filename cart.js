@@ -6,9 +6,19 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayCart() {
       cartItemsContainer.innerHTML = "";
       let total = 0;
-  
+      
       if (cart.length === 0) {
-        cartItemsContainer.innerHTML = `<h2 class="empty">Your cart is empty</h2>`;
+        cartItemsContainer.innerHTML = `<div
+              style="
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                weight: 100%;
+                height: 100%;
+              "
+            >
+              <h2 class="empty">Your cart is empty</h2>
+            </div>`;
         totalContainer.innerHTML = `<h2 class="empty">Total: 0.00 RON</h2>`;
         return;
       }

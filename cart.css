@@ -144,7 +144,6 @@ a:hover {
 {
   display: flex;
   align-items: center;
-  justify-content: space-around;
   height: 80%;
   width: 80%;
   flex-direction: column;
@@ -187,7 +186,7 @@ a:hover {
 
 .totalPrice
 {
-  font-size: 15px;
+  font-size: 13px;
   color: rgb(250, 77, 77);
   font-weight: bold;
   max-width: 50px;

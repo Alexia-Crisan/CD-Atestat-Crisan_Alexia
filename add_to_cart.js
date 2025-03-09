@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
   
       localStorage.setItem("cart", JSON.stringify(cart));
-      alert(`${productName} added to cart!`);
+      alert(`${productName} was added to the cart!`);
     }
   
     document.querySelectorAll(".add-to-cart").forEach((button) => {
