@@ -9,6 +9,39 @@ body {
   overflow-x: hidden;
 }
 
+.button {
+  font-family: "Kumbh Sans", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "YOPQ" 300;
+  width: 300px; 
+  background-color: rgb(242, 239, 231);
+  border: 3px solid black;
+  border-color: rgb(41, 115, 178);
+  padding: 12px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.2s;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.button {
+  color: rgb(41, 115, 178);
+  border: 2px solid rgb(41, 115, 178);
+  font-weight: bold;
+}
+
+.button:hover {
+  border-color: rgb(41, 115, 178);
+  background-color: rgb(41, 115, 178);
+  color: rgb(242, 239, 231);
+  font-weight: bold;
+}
+
 .navwhole {
   display: flex;
   justify-content: center;
@@ -111,6 +144,7 @@ a:hover {
 {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   height: 80%;
   width: 80%;
   flex-direction: column;
@@ -166,6 +200,17 @@ a:hover {
 .plus
 {
   margin-right: 10px;
+}
+
+.empty{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  line-height: 200px; 
+  width: 300px; 
+  color: rgb(41, 115, 178);
+  background-color: rgb(154, 203, 208);
+  border-radius: 20px;
 }
 
 .button .plus, .minus

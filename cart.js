@@ -8,8 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
       let total = 0;
   
       if (cart.length === 0) {
-        cartItemsContainer.innerHTML = `<h2>Your cart is empty</h2>`;
-        totalContainer.innerHTML = "<h2>Total: 0.00 RON</h2>";
+        cartItemsContainer.innerHTML = `<h2 class="empty">Your cart is empty</h2>`;
+        totalContainer.innerHTML = `<h2 class="empty">Total: 0.00 RON</h2>`;
         return;
       }
   
@@ -30,8 +30,9 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   
       totalContainer.innerHTML = `
-        <h2>Total: ${total.toFixed(2)} RON</h2>
-        <button id="clear-cart">Clear Cart</button>
+        <h2 class="empty">Total: &nbsp; <span style="color:rgb(250, 77, 77);">${total.toFixed(2)} RON </span></h2>
+        <button class="button" id="clear-cart">Clear Cart</button>
+        <button class="button" id="pay">Pay</button>
       `;
   
       addEventListeners();
