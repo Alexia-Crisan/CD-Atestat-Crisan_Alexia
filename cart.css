@@ -9,6 +9,12 @@ body {
   overflow-x: hidden;
 }
 
+#paypal-button-container{
+  max-width: 300px;
+  width: 100%;
+}
+
+
 .button {
   font-family: "Kumbh Sans", serif;
   font-optical-sizing: auto;
@@ -138,6 +144,7 @@ a:hover {
   height: 100%;
   flex-direction: column;
   font-size: 17px;
+  gap: 8px;
 }
 
 .cartitems
