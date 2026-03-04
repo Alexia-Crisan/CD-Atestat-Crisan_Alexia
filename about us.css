@@ -34,6 +34,7 @@ body {
   .navbar {
     display: flex;
     justify-content: space-between;
+    padding-right: 40px;
     align-items: center;
     background-color: rgb(41, 115, 178);
     height: 60px;
@@ -59,9 +60,10 @@ body {
     color: rgb(242, 239, 231);
   }
 
-  .navtextright {
+    .navtextright {
     display: flex;
     justify-content: space-between;
+    padding-right: 40px;
     align-items: center;
     text-align: left;
     height: 60px;

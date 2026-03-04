@@ -60,6 +60,7 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
+  padding-right: 40px;
   align-items: center;
   background-color: rgb(41, 115, 178);
   height: 60px;

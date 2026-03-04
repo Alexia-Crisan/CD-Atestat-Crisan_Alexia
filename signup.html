@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cart</title>
+    <title>Sign Up</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,9 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
       rel="stylesheet"
     />
-
-    <link rel="stylesheet" href="./cart.css" />
-
+    <link rel="stylesheet" href="./login.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -33,17 +31,16 @@
             </p>
           </div>
         </div>
-
         <div class="navhalf">
-          <div class="navtextright" style="padding-right: 40px">
-            <a href="./home.html" style="font-size: 17px">Home</a>
-            <a href="./about us.html" style="font-size: 17px">About us</a>
-            <a href="./products.html" style="font-size: 17px">Our products</a>
-            <a href="./contact.html" style="font-size: 17px">Contact us</a>
-            <a href="./login.html" style="font-size: 17px"
+          <div class="navtextright">
+            <a href="../home.html" style="font-size: 17px">Home</a>
+            <a href="../about us.html" style="font-size: 17px">About us</a>
+            <a href="../products.html" style="font-size: 17px">Our products</a>
+            <a href="../contact.html" style="font-size: 17px">Contact us</a>
+            <a href="../login.html" style="font-size: 17px"
               ><i class="fa-solid fa-user" style="font-size: 18px"></i
             ></a>
-            <a href="./cart.html" style="font-size: 17px"
+            <a href="../cart.html" style="font-size: 17px"
               ><i class="fa-solid fa-cart-shopping" style="font-size: 18px"></i
             ></a>
           </div>
@@ -51,23 +48,55 @@
       </div>
     </div>
 
-    <div class="cartcontainer">
-      <div class="cartbox">
-        <div class="cartboxhalf" id="cart-items-container" style="width: 60%">
-          <div class="cartitems"></div>
+    <div class="page">
+      <div class="loginspot">
+        <h1 class="loginspot-title">Create account</h1>
+        <p class="loginspot-sub">Join UniEssentials today</p>
+
+        <div class="field">
+          <label for="name">Full name</label>
+          <div class="input-wrap">
+            <input id="name" type="text" placeholder="John Doe" />
+            <i class="fa-solid fa-user"></i>
+          </div>
         </div>
-        <div class="cartboxhalf" id="cart-total-container" style="width: 40%">
-          <h2>Total: 0.00 RON</h2>
-          <button id="clear-cart">Clear Cart</button>
-          <div id="paypal-button-container"></div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <div class="input-wrap">
+            <input id="email" type="email" placeholder="name@domain.com" />
+            <i class="fa-solid fa-envelope"></i>
+          </div>
         </div>
+
+        <div class="field">
+          <label for="password">Password</label>
+          <div class="input-wrap">
+            <input id="password" type="password" placeholder="••••••••" />
+            <i class="fa-solid fa-lock"></i>
+          </div>
+        </div>
+
+        <div class="field" style="margin-bottom: 28px">
+          <label for="confirm">Confirm password</label>
+          <div class="input-wrap">
+            <input id="confirm" type="password" placeholder="••••••••" />
+            <i class="fa-solid fa-lock"></i>
+          </div>
+        </div>
+
+        <button class="btn-primary">Sign up</button>
+
+        <p class="signup-row">
+          Already have an account? <a href="./login.html">Log in</a>
+        </p>
       </div>
     </div>
 
     <div class="footerdiv">
       <div class="footerdivhalf" style="justify-content: flex-end">
         <p style="font-size: 20px; text-align: right">
-          <a href="mailto:someone@example.com" style="font-size: 20px"
+          <a href="mailto:uniessentials@gmail.com" style="font-size: 20px"
             >uniessentials@gmail.com</a
           >
         </p>
@@ -78,7 +107,6 @@
           padding-right: 20px;
           flex-direction: row;
           justify-content: flex-start;
-          margin-right: 0;
         "
       >
         <a
@@ -96,8 +124,5 @@
         ></a>
       </div>
     </div>
-
-    <script src="cart.js"></script>
-    <script src="https://www.paypal.com/sdk/js?client-id=AdnZk64-CPdAR_xB-EZ9H_JUI9X9x8Xkud8Y2cNJSFswy9_ML7ps9Tk9zfjrudTkVMqFdHlIy0pq0p0W&disable-funding=credit,card&currency=EUR"></script>
   </body>
 </html>

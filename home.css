@@ -54,6 +54,7 @@ body {
   .navtextright {
     display: flex;
     justify-content: space-between;
+    padding-right: 40px;
     align-items: center;
     text-align: left;
     height: 60px;
