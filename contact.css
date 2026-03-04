@@ -14,6 +14,10 @@ body {
     border-right: 3px solid rgb(41, 115, 178);
   }
 
+  p, textarea, input{
+    font-family: "Kumbh Sans", serif;
+  }
+
   .navwhole {
     display: flex;
     justify-content: center;
