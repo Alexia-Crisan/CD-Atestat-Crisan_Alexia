@@ -49,7 +49,48 @@
     </div>
 
     <div class="page">
-      <div class="loginspot">
+      <div
+        id="already-logged-in"
+        class="loginspot"
+        style="display: none; text-align: center"
+      >
+        <i
+          class="fa-solid fa-circle-check"
+          style="
+            font-size: 48px;
+            color: rgb(154, 203, 208);
+            margin-bottom: 16px;
+          "
+        ></i>
+        <h1 class="loginspot-title">You're logged in</h1>
+        <p class="loginspot-sub" style="margin-bottom: 32px">
+          Welcome back, <span id="logged-in-name"></span>!
+        </p>
+        <a
+          href="../home.html"
+          class="btn-primary"
+          style="
+            display: block;
+            text-decoration: none;
+            margin-bottom: 12px;
+            color: rgb(100, 160, 175);
+          "
+          >Go to Home</a
+        >
+        <button
+          class="btn-primary"
+          id="logout-btn"
+          style="
+            background-color: transparent;
+            border: 2px solid rgb(242, 239, 231);
+            color: rgb(242, 239, 231);
+          "
+        >
+          Log out
+        </button>
+      </div>
+
+      <div id="login-form" class="loginspot">
         <h1 class="loginspot-title">Welcome back</h1>
         <p class="loginspot-sub">Log in to your UniEssentials account</p>
 
@@ -69,9 +110,21 @@
           </div>
         </div>
 
-        <label class="remember"> <input type="checkbox" /> Remember me </label>
+        <label class="remember">
+          <input type="checkbox" id="remember" /> Remember me
+        </label>
 
-        <button class="btn-primary">Log in</button>
+        <p
+          id="error-msg"
+          style="
+            color: rgb(250, 77, 77);
+            font-size: 13px;
+            margin-bottom: 12px;
+            display: none;
+          "
+        ></p>
+
+        <button class="btn-primary" id="login-btn">Log in</button>
 
         <p class="signup-row">
           Don't have an account? <a href="./signup.html">Sign up</a>

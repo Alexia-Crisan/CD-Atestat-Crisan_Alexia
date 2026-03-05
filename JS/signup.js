@@ -6,6 +6,8 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 import { doc, setDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
+document.addEventListener("DOMContentLoaded", () => {
+
 onAuthStateChanged(auth, (user) => {
   if (user) window.location.href = "./home.html";
 });
@@ -62,4 +64,6 @@ document.getElementById("signup-btn").addEventListener("click", async () => {
         errorMsg.textContent = "Something went wrong. Please try again.";
     }
   }
+});
+
 });
