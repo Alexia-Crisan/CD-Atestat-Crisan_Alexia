@@ -7,14 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   onAuthStateChanged(auth, (user) => {
     if (!user) {
-      cartItemsContainer.innerHTML = `
-        <div style="display:flex; justify-content:space-around; align-items:center; width:100%; height:100%;">
-          <h2 class="empty">Please <a href="./login.html">log in</a> to view your cart</h2>
+      document.querySelector(".cartbox").innerHTML = `
+        <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%; height:100%; gap:20px;">
+          <p style="font-size:20px; font-weight:700; color:rgb(41,115,178);">Please log in to view your cart</p>
+          <a href="./login.html" style="padding:10px 24px; background-color:rgb(41,115,178); color:rgb(242,239,231); border-radius:9px; font-weight:700; font-size:15px; text-decoration:none;">Go to Login</a>
         </div>`;
-      totalContainer.innerHTML = "";
       return;
     }
 
+    // User-specific cart key
     const cartKey = `cart_${user.uid}`;
     let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
 
