@@ -2,7 +2,6 @@ import { auth } from "./firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   function addToCart(event) {
     const button = event.target;
@@ -15,6 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
         alert("Please log in to add items to your cart.");
         return;
       }
+
+      const cartKey = `cart_${user.uid}`;
+      let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
 
       const existingProduct = cart.find((item) => item.name === productName);
 
@@ -29,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
 
-      localStorage.setItem("cart", JSON.stringify(cart));
+      localStorage.setItem(cartKey, JSON.stringify(cart));
       alert(`${productName} was added to the cart!`);
     });
   }

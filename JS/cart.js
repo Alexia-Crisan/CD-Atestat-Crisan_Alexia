@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const cartItemsContainer = document.querySelector(".cartitems");
   const totalContainer     = document.querySelector("#cart-total-container");
 
-  // Check login before showing cart
   onAuthStateChanged(auth, (user) => {
     if (!user) {
       cartItemsContainer.innerHTML = `
@@ -16,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Logged in — load cart normally from localStorage
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cartKey = `cart_${user.uid}`;
+    let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
 
     function displayCart() {
       cartItemsContainer.innerHTML = "";
@@ -69,7 +68,8 @@ document.addEventListener("DOMContentLoaded", function () {
         onApprove: function (data, actions) {
           return actions.order.capture().then(function (details) {
             alert("Thank you for your purchase!");
-            clearCart();
+            localStorage.removeItem(cartKey);
+            location.reload();
           });
         },
         onError: function (err) {
@@ -92,7 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
         button.addEventListener("click", function () {
           const index = this.getAttribute("data-index");
           cart[index].quantity++;
-          localStorage.setItem("cart", JSON.stringify(cart));
+          localStorage.setItem(cartKey, JSON.stringify(cart));
           displayCart();
         });
       });
@@ -105,13 +105,13 @@ document.addEventListener("DOMContentLoaded", function () {
           } else {
             cart.splice(index, 1);
           }
-          localStorage.setItem("cart", JSON.stringify(cart));
+          localStorage.setItem(cartKey, JSON.stringify(cart));
           displayCart();
         });
       });
 
       document.getElementById("clear-cart").addEventListener("click", function () {
-        localStorage.removeItem("cart");
+        localStorage.removeItem(cartKey);
         location.reload();
       });
     }
