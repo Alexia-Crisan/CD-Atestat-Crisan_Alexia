@@ -46,6 +46,7 @@ document.getElementById("signup-btn").addEventListener("click", async () => {
     await setDoc(doc(db, "users", user.uid), {
       name:      name,
       email:     email,
+      isAdmin:   false,
       cart:      [],
       createdAt: new Date().toISOString(),
     });
