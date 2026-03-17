@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      await setPersistence(auth, remember ? browserLocalPersistence : browserSessionPersistence);
+      await setPersistence(auth, browserLocalPersistence);
       await signInWithEmailAndPassword(auth, email, password);
       window.location.href = "../home.html";
     } catch (err) {
