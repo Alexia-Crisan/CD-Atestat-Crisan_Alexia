@@ -6,21 +6,12 @@
     <title>Admin Panel – UniEssentials</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./admin.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
-
   <body>
+
     <div class="navwhole">
       <div class="navbar">
         <div class="navbrand">
@@ -29,56 +20,33 @@
           <span class="admin-badge">Admin</span>
         </div>
         <div class="navlinks">
-          <a href="./home.html"
-            ><i class="fa-solid fa-house"></i> Back to site</a
-          >
-          <button class="btn-logout" id="logout-btn">
-            <i class="fa-solid fa-right-from-bracket"></i> Log out
-          </button>
+          <a href="./home.html"><i class="fa-solid fa-house"></i> Back to site</a>
+          <button class="btn-logout" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
         </div>
       </div>
     </div>
 
-    <div id="loading">
-      <div class="spinner"></div>
-      <p>Verifying access...</p>
-    </div>
+    <div id="loading"><div class="spinner"></div><p>Verifying access...</p></div>
 
-    <div id="access-denied" style="display: none">
+    <div id="access-denied" style="display:none;">
       <i class="fa-solid fa-ban"></i>
       <h2>Access Denied</h2>
       <p>You don't have admin privileges.</p>
-      <a href="./home.html" style="margin-top: 12px">Go back to site</a>
+      <a href="./home.html" style="margin-top:12px;">Go back to site</a>
     </div>
 
-    <div id="dashboard" style="display: none">
+    <div id="dashboard" style="display:none;">
       <div class="stats-row">
-        <div class="stat-card">
-          <span class="stat-label">Total Users</span>
-          <span class="stat-value" id="stat-total">—</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-label">Admin Users</span>
-          <span class="stat-value" id="stat-admins">—</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-label">Users with Cart Items</span>
-          <span class="stat-value" id="stat-carts">—</span>
-        </div>
-        <div class="stat-card">
-          <span class="stat-label">Total Cart Value</span>
-          <span class="stat-value" id="stat-value">—</span>
-        </div>
+        <div class="stat-card"><span class="stat-label">Total Users</span><span class="stat-value" id="stat-total">—</span></div>
+        <div class="stat-card"><span class="stat-label">Admin Users</span><span class="stat-value" id="stat-admins">—</span></div>
+        <div class="stat-card"><span class="stat-label">Users with Cart Items</span><span class="stat-value" id="stat-carts">—</span></div>
+        <div class="stat-card"><span class="stat-label">Total Cart Value</span><span class="stat-value" id="stat-value">—</span></div>
       </div>
 
       <div class="toolbar">
         <div class="search-wrap">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input
-            type="text"
-            id="search-input"
-            placeholder="Search by name or email..."
-          />
+          <input type="text" id="search-input" placeholder="Search by name or email..." />
         </div>
         <select class="filter-select" id="filter-select">
           <option value="all">All users</option>
@@ -88,20 +56,9 @@
       </div>
 
       <div class="table-box">
-        <div class="table-box-header">
-          <h2>Users</h2>
-          <span id="user-count"></span>
-        </div>
+        <div class="table-box-header"><h2>Users</h2><span id="user-count"></span></div>
         <table>
-          <thead>
-            <tr>
-              <th>User</th>
-              <th>Role</th>
-              <th>Cart</th>
-              <th>Registered</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
+          <thead><tr><th>User</th><th>Role</th><th>Cart</th><th>Registered</th><th>Actions</th></tr></thead>
           <tbody id="user-table-body"></tbody>
         </table>
       </div>
@@ -110,41 +67,20 @@
     <div class="modal-overlay" id="modal-overlay">
       <div class="modal">
         <div class="modal-header">
-          <div>
-            <h3 id="modal-name"></h3>
-            <p id="modal-uid"></p>
-          </div>
-          <button class="modal-close" id="modal-close">
-            <i class="fa-solid fa-xmark"></i>
-          </button>
+          <div><h3 id="modal-name"></h3><p id="modal-uid"></p></div>
+          <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
         </div>
         <div class="modal-body">
           <div class="info-grid">
-            <div class="info-item">
-              <label>Email</label>
-              <p id="modal-email"></p>
-            </div>
-            <div class="info-item">
-              <label>Role</label>
-              <p id="modal-role"></p>
-            </div>
-            <div class="info-item">
-              <label>Registered</label>
-              <p id="modal-created"></p>
-            </div>
-            <div class="info-item">
-              <label>Cart Items</label>
-              <p id="modal-cart-count"></p>
-            </div>
+            <div class="info-item"><label>Email</label><p id="modal-email"></p></div>
+            <div class="info-item"><label>Role</label><p id="modal-role"></p></div>
+            <div class="info-item"><label>Registered</label><p id="modal-created"></p></div>
+            <div class="info-item"><label>Cart Items</label><p id="modal-cart-count"></p></div>
           </div>
           <div class="cart-section">
-            <h4>
-              <i class="fa-solid fa-cart-shopping"></i> &nbsp;Cart Contents
-            </h4>
+            <h4><i class="fa-solid fa-cart-shopping"></i> &nbsp;Cart Contents</h4>
             <div id="modal-cart-items"></div>
-            <div class="cart-total" id="modal-cart-total" style="display: none">
-              Total: <span id="modal-total-value"></span>
-            </div>
+            <div class="cart-total" id="modal-cart-total" style="display:none;">Total: <span id="modal-total-value"></span></div>
           </div>
         </div>
         <div class="modal-actions" id="modal-actions"></div>
@@ -154,126 +90,56 @@
     <div id="toast"></div>
 
     <div class="footerdiv">
-      <div class="footerdivhalf" style="justify-content: flex-end">
-        <p style="font-size: 20px; text-align: right">
-          <a href="mailto:uniessentials@gmail.com" style="font-size: 20px"
-            >uniessentials@gmail.com</a
-          >
-        </p>
+      <div class="footerdivhalf" style="justify-content:flex-end">
+        <p style="font-size:20px; text-align:right"><a href="mailto:uniessentials@gmail.com" style="font-size:20px">uniessentials@gmail.com</a></p>
       </div>
-      <div
-        class="footerdivhalf"
-        style="
-          padding-right: 20px;
-          flex-direction: row;
-          justify-content: flex-start;
-        "
-      >
-        <a
-          href="https://www.facebook.com/profile.php?id=61566470451000&locale=ro_RO"
-          class="fa-brands fa-facebook"
-        ></a>
-        <a
-          href="https://www.instagram.com/uniessentials/"
-          class="fa-brands fa-instagram"
-        ></a>
+      <div class="footerdivhalf" style="padding-right:20px; flex-direction:row; justify-content:flex-start;">
+        <a href="https://www.facebook.com/profile.php?id=61566470451000&locale=ro_RO" class="fa-brands fa-facebook"></a>
+        <a href="https://www.instagram.com/uniessentials/" class="fa-brands fa-instagram"></a>
         <a href="https://pin.it/5JiIFfCrw" class="fa-brands fa-pinterest"></a>
-        <a
-          href="https://www.youtube.com/@Uniessentials"
-          class="fa-brands fa-youtube"
-        ></a>
+        <a href="https://www.youtube.com/@Uniessentials" class="fa-brands fa-youtube"></a>
       </div>
     </div>
 
     <script type="module">
-      // Import from the SAME firebase.js your other pages use
       import { auth, db } from "./JS/firebase.js";
-      import {
-        onAuthStateChanged,
-        signOut,
-      } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
-      import {
-        collection,
-        getDocs,
-        getDoc,
-        doc,
-        updateDoc,
-        deleteDoc,
-      } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+      import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+      import { collection, getDocs, getDoc, doc, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
-      let allUsers = [];
-      let currentUser = null;
-      let selectedUser = null;
+      let allUsers = [], currentUser = null, selectedUser = null;
 
-      const loading = document.getElementById("loading");
+      const loading      = document.getElementById("loading");
       const accessDenied = document.getElementById("access-denied");
-      const dashboard = document.getElementById("dashboard");
-      const tableBody = document.getElementById("user-table-body");
-      const searchInput = document.getElementById("search-input");
+      const dashboard    = document.getElementById("dashboard");
+      const tableBody    = document.getElementById("user-table-body");
+      const searchInput  = document.getElementById("search-input");
       const filterSelect = document.getElementById("filter-select");
-      const userCount = document.getElementById("user-count");
+      const userCount    = document.getElementById("user-count");
       const modalOverlay = document.getElementById("modal-overlay");
-      const toast = document.getElementById("toast");
+      const toast        = document.getElementById("toast");
 
-      document
-        .getElementById("logout-btn")
-        .addEventListener("click", async () => {
-          await signOut(auth);
-          window.location.href = "./login.html";
-        });
-      document
-        .getElementById("modal-close")
-        .addEventListener("click", closeModal);
-      modalOverlay.addEventListener("click", (e) => {
-        if (e.target === modalOverlay) closeModal();
-      });
+      document.getElementById("logout-btn").addEventListener("click", async () => { await signOut(auth); window.location.href = "./login.html"; });
+      document.getElementById("modal-close").addEventListener("click", closeModal);
+      modalOverlay.addEventListener("click", (e) => { if (e.target === modalOverlay) closeModal(); });
       searchInput.addEventListener("input", renderTable);
       filterSelect.addEventListener("change", renderTable);
 
       function showToast(msg, type = "success") {
-        toast.textContent = msg;
-        toast.className = "show " + type;
-        setTimeout(() => {
-          toast.className = "";
-        }, 3000);
+        toast.textContent = msg; toast.className = "show " + type;
+        setTimeout(() => { toast.className = ""; }, 3000);
       }
 
       function waitForAuth() {
-        return new Promise((resolve) => {
-          const unsub = onAuthStateChanged(auth, (user) => {
-            unsub();
-            resolve(user);
-          });
-        });
+        return new Promise((resolve) => { const u = onAuthStateChanged(auth, (user) => { u(); resolve(user); }); });
       }
 
       async function init() {
         const user = await waitForAuth();
-        console.log("Auth user:", user);
-
-        if (!user) {
-          loading.style.display = "none";
-          accessDenied.style.display = "flex";
-          return;
-        }
-
+        if (!user) { loading.style.display = "none"; accessDenied.style.display = "flex"; return; }
         currentUser = user;
         const userDoc = await getDoc(doc(db, "users", user.uid));
-        console.log(
-          "Firestore doc exists:",
-          userDoc.exists(),
-          "isAdmin:",
-          userDoc.data()?.isAdmin,
-        );
-
-        if (!userDoc.exists() || !userDoc.data().isAdmin) {
-          loading.style.display = "none";
-          accessDenied.style.display = "flex";
-          return;
-        }
-
-        loading.style.display = "none";
-        dashboard.style.display = "block";
+        if (!userDoc.exists() || !userDoc.data().isAdmin) { loading.style.display = "none"; accessDenied.style.display = "flex"; return; }
+        loading.style.display = "none"; dashboard.style.display = "block";
         await loadUsers();
       }
 
@@ -281,111 +147,65 @@
 
       async function loadUsers() {
         try {
-          const snapshot = await getDocs(collection(db, "users"));
-          allUsers = snapshot.docs.map((d) => ({ uid: d.id, ...d.data() }));
-          updateStats();
-          renderTable();
-        } catch (err) {
-          showToast("Failed to load users", "error");
-          console.error(err);
-        }
+          const snap = await getDocs(collection(db, "users"));
+          allUsers = snap.docs.map(d => ({ uid: d.id, ...d.data() }));
+          updateStats(); renderTable();
+        } catch (err) { showToast("Failed to load users", "error"); console.error(err); }
       }
 
       function updateStats() {
         const total = allUsers.length;
-        const admins = allUsers.filter((u) => u.isAdmin).length;
-        const withCart = allUsers.filter(
-          (u) => getCartItems(u).length > 0,
-        ).length;
+        const admins = allUsers.filter(u => u.isAdmin).length;
+        const withCart = allUsers.filter(u => getCart(u).length > 0).length;
         let totalValue = 0;
-        allUsers.forEach((u) =>
-          getCartItems(u).forEach((i) => {
-            totalValue += i.price * i.quantity;
-          }),
-        );
-        document.getElementById("stat-total").textContent = total;
+        allUsers.forEach(u => getCart(u).forEach(i => { totalValue += i.price * i.quantity; }));
+        document.getElementById("stat-total").textContent  = total;
         document.getElementById("stat-admins").textContent = admins;
-        document.getElementById("stat-carts").textContent = withCart;
-        document.getElementById("stat-value").textContent =
-          totalValue.toFixed(2) + " RON";
+        document.getElementById("stat-carts").textContent  = withCart;
+        document.getElementById("stat-value").textContent  = totalValue.toFixed(2) + " RON";
       }
 
-      function getCartItems(user) {
-        return Array.isArray(user.cart) ? user.cart : [];
-      }
+      function getCart(user) { return Array.isArray(user.cart) ? user.cart : []; }
 
       function renderTable() {
-        const query = searchInput.value.toLowerCase();
+        const query  = searchInput.value.toLowerCase();
         const filter = filterSelect.value;
-        const filtered = allUsers.filter((u) => {
-          const matchSearch =
-            (u.name || "").toLowerCase().includes(query) ||
-            (u.email || "").toLowerCase().includes(query);
-          const matchFilter =
-            filter === "all"
-              ? true
-              : filter === "admin"
-                ? u.isAdmin
-                : getCartItems(u).length > 0;
-          return matchSearch && matchFilter;
+        const filtered = allUsers.filter(u => {
+          const s = (u.name||"").toLowerCase().includes(query) || (u.email||"").toLowerCase().includes(query);
+          const f = filter === "all" ? true : filter === "admin" ? u.isAdmin : getCart(u).length > 0;
+          return s && f;
         });
-
-        userCount.textContent =
-          filtered.length + " user" + (filtered.length !== 1 ? "s" : "");
-        tableBody.innerHTML =
-          filtered
-            .map((u) => {
-              const cart = getCartItems(u);
-              const date = u.createdAt
-                ? new Date(u.createdAt).toLocaleDateString("ro-RO")
-                : "—";
-              const isMe = u.uid === currentUser.uid;
-              return `
-            <tr onclick="window._openModal('${u.uid}')">
-              <td>
-                <div class="user-name">${u.name || "—"} ${isMe ? '<span style="color:rgb(154,203,208);font-size:11px;">(you)</span>' : ""}</div>
-                <div class="user-email">${u.email || "—"}</div>
-              </td>
-              <td>${
-                u.isAdmin
-                  ? '<span class="badge-admin"><i class="fa-solid fa-shield-halved"></i> Admin</span>'
-                  : '<span class="badge-user"><i class="fa-solid fa-user"></i> User</span>'
-              }</td>
-              <td><span class="cart-count"><i class="fa-solid fa-cart-shopping"></i> ${cart.length} item${cart.length !== 1 ? "s" : ""}</span></td>
-              <td class="date-cell">${date}</td>
-              <td class="actions-cell" onclick="event.stopPropagation()">
-                <button class="btn-action btn-view" onclick="window._openModal('${u.uid}')"><i class="fa-solid fa-eye"></i> View</button>
-                ${
-                  u.isAdmin
-                    ? `<button class="btn-action btn-demote" onclick="window._toggleAdmin('${u.uid}',false)"><i class="fa-solid fa-user-minus"></i> Demote</button>`
-                    : `<button class="btn-action btn-promote" onclick="window._toggleAdmin('${u.uid}',true)"><i class="fa-solid fa-shield-halved"></i> Make Admin</button>`
-                }
-                ${!isMe ? `<button class="btn-action btn-delete" onclick="window._confirmDelete('${u.uid}')"><i class="fa-solid fa-trash"></i></button>` : ""}
-              </td>
-            </tr>`;
-            })
-            .join("") ||
-          `<tr><td colspan="5" style="text-align:center;color:rgb(154,203,208);padding:32px;">No users found</td></tr>`;
+        userCount.textContent = filtered.length + " user" + (filtered.length !== 1 ? "s" : "");
+        tableBody.innerHTML = filtered.map(u => {
+          const cart = getCart(u);
+          const date = u.createdAt ? new Date(u.createdAt).toLocaleDateString("ro-RO") : "—";
+          const isMe = u.uid === currentUser.uid;
+          return `<tr onclick="window._open('${u.uid}')">
+            <td><div class="user-name">${u.name||"—"} ${isMe?"<span style='color:rgb(154,203,208);font-size:11px;'>(you)</span>":""}</div><div class="user-email">${u.email||"—"}</div></td>
+            <td>${u.isAdmin?'<span class="badge-admin"><i class="fa-solid fa-shield-halved"></i> Admin</span>':'<span class="badge-user"><i class="fa-solid fa-user"></i> User</span>'}</td>
+            <td><span class="cart-count"><i class="fa-solid fa-cart-shopping"></i> ${cart.length} item${cart.length!==1?"s":""}</span></td>
+            <td class="date-cell">${date}</td>
+            <td class="actions-cell" onclick="event.stopPropagation()">
+              <button class="btn-action btn-view" onclick="window._open('${u.uid}')"><i class="fa-solid fa-eye"></i> View</button>
+              ${u.isAdmin
+                ?`<button class="btn-action btn-demote" onclick="window._admin('${u.uid}',false)"><i class="fa-solid fa-user-minus"></i> Demote</button>`
+                :`<button class="btn-action btn-promote" onclick="window._admin('${u.uid}',true)"><i class="fa-solid fa-shield-halved"></i> Make Admin</button>`}
+              ${!isMe?`<button class="btn-action btn-delete" onclick="window._delete('${u.uid}')"><i class="fa-solid fa-trash"></i></button>`:""}
+            </td>
+          </tr>`;
+        }).join("") || `<tr><td colspan="5" style="text-align:center;color:rgb(154,203,208);padding:32px;">No users found</td></tr>`;
       }
 
       function openModal(uid) {
-        selectedUser = allUsers.find((u) => u.uid === uid);
+        selectedUser = allUsers.find(u => u.uid === uid);
         if (!selectedUser) return;
-        const u = selectedUser;
-        const cart = getCartItems(u);
-        const isMe = u.uid === currentUser.uid;
-
-        document.getElementById("modal-name").textContent = u.name || "Unknown";
-        document.getElementById("modal-uid").textContent = "UID: " + u.uid;
+        const u = selectedUser, cart = getCart(u), isMe = u.uid === currentUser.uid;
+        document.getElementById("modal-name").textContent  = u.name || "Unknown";
+        document.getElementById("modal-uid").textContent   = "UID: " + u.uid;
         document.getElementById("modal-email").textContent = u.email || "—";
-        document.getElementById("modal-role").innerHTML = u.isAdmin
-          ? '<span class="badge-admin"><i class="fa-solid fa-shield-halved"></i> Admin</span>'
-          : '<span class="badge-user"><i class="fa-solid fa-user"></i> User</span>';
-        document.getElementById("modal-created").textContent = u.createdAt
-          ? new Date(u.createdAt).toLocaleString("ro-RO")
-          : "—";
-        document.getElementById("modal-cart-count").textContent =
-          cart.length + " item" + (cart.length !== 1 ? "s" : "");
+        document.getElementById("modal-role").innerHTML    = u.isAdmin ? '<span class="badge-admin"><i class="fa-solid fa-shield-halved"></i> Admin</span>' : '<span class="badge-user"><i class="fa-solid fa-user"></i> User</span>';
+        document.getElementById("modal-created").textContent    = u.createdAt ? new Date(u.createdAt).toLocaleString("ro-RO") : "—";
+        document.getElementById("modal-cart-count").textContent = cart.length + " item" + (cart.length !== 1 ? "s" : "");
 
         const cartEl = document.getElementById("modal-cart-items");
         if (cart.length === 0) {
@@ -393,96 +213,59 @@
           document.getElementById("modal-cart-total").style.display = "none";
         } else {
           let total = 0;
-          cartEl.innerHTML = cart
-            .map((item) => {
-              const sub = item.price * item.quantity;
-              total += sub;
-              return `<div class="cart-item-row">
-              <img src="${item.image || ""}" onerror="this.style.display='none'" />
-              <span class="cart-item-name">${item.name}</span>
-              <span class="cart-item-qty">x${item.quantity}</span>
-              <span class="cart-item-price">${sub.toFixed(2)} RON</span>
-            </div>`;
-            })
-            .join("");
+          cartEl.innerHTML = cart.map(item => {
+            const sub = item.price * item.quantity; total += sub;
+            return `<div class="cart-item-row"><img src="${item.image||""}" onerror="this.style.display='none'" /><span class="cart-item-name">${item.name}</span><span class="cart-item-qty">x${item.quantity}</span><span class="cart-item-price">${sub.toFixed(2)} RON</span></div>`;
+          }).join("");
           document.getElementById("modal-cart-total").style.display = "flex";
-          document.getElementById("modal-total-value").textContent =
-            total.toFixed(2) + " RON";
+          document.getElementById("modal-total-value").textContent = total.toFixed(2) + " RON";
         }
 
         document.getElementById("modal-actions").innerHTML = `
-          ${cart.length > 0 ? `<button class="modal-btn orange" onclick="window._clearCart('${u.uid}')"><i class="fa-solid fa-cart-arrow-down"></i> Clear Cart</button>` : ""}
-          ${
-            u.isAdmin
-              ? `<button class="modal-btn orange" onclick="window._toggleAdmin('${u.uid}',false)"><i class="fa-solid fa-user-minus"></i> Remove Admin</button>`
-              : `<button class="modal-btn green" onclick="window._toggleAdmin('${u.uid}',true)"><i class="fa-solid fa-shield-halved"></i> Make Admin</button>`
-          }
-          ${!isMe ? `<button class="modal-btn red" onclick="window._confirmDelete('${u.uid}')"><i class="fa-solid fa-trash"></i> Delete User</button>` : ""}
-          <button class="modal-btn ghost" onclick="window._closeModal()">Close</button>
-        `;
+          ${cart.length>0?`<button class="modal-btn orange" onclick="window._clearCart('${u.uid}')"><i class="fa-solid fa-cart-arrow-down"></i> Clear Cart</button>`:""}
+          ${u.isAdmin
+            ?`<button class="modal-btn orange" onclick="window._admin('${u.uid}',false)"><i class="fa-solid fa-user-minus"></i> Remove Admin</button>`
+            :`<button class="modal-btn green" onclick="window._admin('${u.uid}',true)"><i class="fa-solid fa-shield-halved"></i> Make Admin</button>`}
+          ${!isMe?`<button class="modal-btn red" onclick="window._delete('${u.uid}')"><i class="fa-solid fa-trash"></i> Delete User</button>`:""}
+          <button class="modal-btn ghost" onclick="window._close()">Close</button>`;
         modalOverlay.classList.add("open");
       }
 
-      function closeModal() {
-        modalOverlay.classList.remove("open");
-        selectedUser = null;
-      }
+      function closeModal() { modalOverlay.classList.remove("open"); selectedUser = null; }
 
-      window._openModal = openModal;
-      window._closeModal = closeModal;
+      window._open  = openModal;
+      window._close = closeModal;
 
-      window._toggleAdmin = async (uid, makeAdmin) => {
+      window._admin = async (uid, makeAdmin) => {
         try {
           await updateDoc(doc(db, "users", uid), { isAdmin: makeAdmin });
-          const u = allUsers.find((u) => u.uid === uid);
-          if (u) u.isAdmin = makeAdmin;
-          updateStats();
-          renderTable();
-          showToast(
-            makeAdmin ? "User promoted to admin" : "Admin privileges removed",
-          );
+          const u = allUsers.find(u => u.uid === uid); if (u) u.isAdmin = makeAdmin;
+          updateStats(); renderTable();
+          showToast(makeAdmin ? "User promoted to admin" : "Admin privileges removed");
           if (selectedUser?.uid === uid) openModal(uid);
-        } catch (err) {
-          showToast("Failed to update role", "error");
-          console.error(err);
-        }
+        } catch (err) { showToast("Failed", "error"); console.error(err); }
       };
 
       window._clearCart = async (uid) => {
         if (!confirm("Clear this user's cart?")) return;
         try {
           await updateDoc(doc(db, "users", uid), { cart: [] });
-          const u = allUsers.find((u) => u.uid === uid);
-          if (u) u.cart = [];
-          updateStats();
-          renderTable();
+          const u = allUsers.find(u => u.uid === uid); if (u) u.cart = [];
+          updateStats(); renderTable();
           showToast("Cart cleared");
           if (selectedUser?.uid === uid) openModal(uid);
-        } catch (err) {
-          showToast("Failed to clear cart", "error");
-          console.error(err);
-        }
+        } catch (err) { showToast("Failed", "error"); console.error(err); }
       };
 
-      window._confirmDelete = async (uid) => {
-        const u = allUsers.find((u) => u.uid === uid);
-        if (
-          !confirm(
-            `Delete user "${u?.name || u?.email}"? This cannot be undone.`,
-          )
-        )
-          return;
+      window._delete = async (uid) => {
+        const u = allUsers.find(u => u.uid === uid);
+        if (!confirm(`Delete user "${u?.name||u?.email}"? This cannot be undone.`)) return;
         try {
           await deleteDoc(doc(db, "users", uid));
-          allUsers = allUsers.filter((u) => u.uid !== uid);
-          updateStats();
-          renderTable();
-          closeModal();
+          allUsers = allUsers.filter(u => u.uid !== uid);
+          updateStats(); renderTable(); closeModal();
           showToast("User deleted");
-        } catch (err) {
-          showToast("Failed to delete user", "error");
-          console.error(err);
-        }
+        } catch (err) { showToast("Failed", "error"); console.error(err); }
       };
     </script>
   </body>
