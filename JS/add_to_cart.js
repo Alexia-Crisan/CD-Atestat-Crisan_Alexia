@@ -1,5 +1,6 @@
-import { auth } from "./firebase.js";
+import { auth, db } from "./firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+import { doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -9,29 +10,24 @@ document.addEventListener("DOMContentLoaded", function () {
     const productPrice = parseFloat(button.getAttribute("data-price"));
     const productImage = button.getAttribute("data-image");
 
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, async (user) => {
       if (!user) {
         alert("Please log in to add items to your cart.");
         return;
       }
 
-      const cartKey = `cart_${user.uid}`;
-      let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+      const userRef  = doc(db, "users", user.uid);
+      const userSnap = await getDoc(userRef);
+      let cart = userSnap.exists() ? (userSnap.data().cart || []) : [];
 
-      const existingProduct = cart.find((item) => item.name === productName);
-
-      if (existingProduct) {
-        existingProduct.quantity += 1;
+      const existing = cart.find((item) => item.name === productName);
+      if (existing) {
+        existing.quantity += 1;
       } else {
-        cart.push({
-          name: productName,
-          price: productPrice,
-          quantity: 1,
-          image: productImage,
-        });
+        cart.push({ name: productName, price: productPrice, quantity: 1, image: productImage });
       }
 
-      localStorage.setItem(cartKey, JSON.stringify(cart));
+      await updateDoc(userRef, { cart });
       alert(`${productName} was added to the cart!`);
     });
   }

@@ -1,11 +1,12 @@
-import { auth } from "./firebase.js";
+import { auth, db } from "./firebase.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+import { doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   const cartItemsContainer = document.querySelector(".cartitems");
   const totalContainer     = document.querySelector("#cart-total-container");
 
-  onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, async (user) => {
     if (!user) {
       document.querySelector(".cartbox").innerHTML = `
         <div style="display:flex; flex-direction:column; justify-content:center; align-items:center; width:100%; height:100%; gap:20px;">
@@ -15,9 +16,13 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // User-specific cart key
-    const cartKey = `cart_${user.uid}`;
-    let cart = JSON.parse(localStorage.getItem(cartKey)) || [];
+    const userRef  = doc(db, "users", user.uid);
+    const userSnap = await getDoc(userRef);
+    let cart = userSnap.exists() ? (userSnap.data().cart || []) : [];
+
+    async function saveCart() {
+      await updateDoc(userRef, { cart });
+    }
 
     function displayCart() {
       cartItemsContainer.innerHTML = "";
@@ -33,12 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       cart.forEach((item, index) => {
-        let itemTotal = item.price * item.quantity;
-        total += itemTotal;
-
+        total += item.price * item.quantity;
         cartItemsContainer.innerHTML += `
           <div class="item">
-            <img class="itemphoto" src="${item.image}" style="width: 50px; height: 50px;" />
+            <img class="itemphoto" src="${item.image}" style="width:50px; height:50px;" />
             <p class="itemname">${item.name}</p>
             <div class="totalPrice">${item.price.toFixed(2)} RON</div>
             <button class="minus" data-index="${index}">-</button>
@@ -48,71 +51,58 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       totalContainer.innerHTML = `
-        <h2 class="empty">Total: &nbsp; <span style="color:rgb(250, 77, 77);">${total.toFixed(2)} RON</span></h2>
+        <h2 class="empty">Total: &nbsp; <span style="color:rgb(250,77,77);">${total.toFixed(2)} RON</span></h2>
         <button class="button" id="clear-cart">Clear Cart</button>
         <div id="paypal-button-container"></div>`;
 
       addEventListeners();
-      renderPayPalButton();
+      renderPayPalButton(total);
     }
 
-    function renderPayPalButton() {
+    function renderPayPalButton(totalRON) {
       paypal.Buttons({
         style: { layout: "horizontal", color: "gold", shape: "rect", label: "paypal", height: 50 },
         createOrder: function (data, actions) {
-          let totalRON = getTotalCartAmount();
-          let totalAmount = totalRON / 5;
           return actions.order.create({
-            purchase_units: [{ amount: { value: totalAmount.toFixed(2), currency_code: "EUR" } }],
+            purchase_units: [{ amount: { value: (totalRON / 5).toFixed(2), currency_code: "EUR" } }],
           });
         },
         onApprove: function (data, actions) {
-          return actions.order.capture().then(function (details) {
+          return actions.order.capture().then(async function () {
             alert("Thank you for your purchase!");
-            localStorage.removeItem(cartKey);
+            cart = [];
+            await saveCart();
             location.reload();
           });
         },
         onError: function (err) {
-          console.error("PayPal Checkout Error:", err);
-          alert("An error occurred during the transaction. Please try again.");
+          console.error("PayPal error:", err);
+          alert("An error occurred. Please try again.");
         },
       }).render("#paypal-button-container");
     }
 
-    function getTotalCartAmount() {
-      let totalElement = document.querySelector("#cart-total-container h2 span");
-      if (!totalElement) return 0;
-      let totalText = totalElement.innerText;
-      let totalAmount = parseFloat(totalText.replace(" RON", "").trim());
-      return isNaN(totalAmount) ? 0 : totalAmount;
-    }
-
     function addEventListeners() {
-      document.querySelectorAll(".plus").forEach((button) => {
-        button.addEventListener("click", function () {
-          const index = this.getAttribute("data-index");
-          cart[index].quantity++;
-          localStorage.setItem(cartKey, JSON.stringify(cart));
+      document.querySelectorAll(".plus").forEach((btn) => {
+        btn.addEventListener("click", async function () {
+          cart[this.getAttribute("data-index")].quantity++;
+          await saveCart();
           displayCart();
         });
       });
 
-      document.querySelectorAll(".minus").forEach((button) => {
-        button.addEventListener("click", function () {
-          const index = this.getAttribute("data-index");
-          if (cart[index].quantity > 1) {
-            cart[index].quantity--;
-          } else {
-            cart.splice(index, 1);
-          }
-          localStorage.setItem(cartKey, JSON.stringify(cart));
+      document.querySelectorAll(".minus").forEach((btn) => {
+        btn.addEventListener("click", async function () {
+          const i = parseInt(this.getAttribute("data-index"));
+          if (cart[i].quantity > 1) { cart[i].quantity--; } else { cart.splice(i, 1); }
+          await saveCart();
           displayCart();
         });
       });
 
-      document.getElementById("clear-cart").addEventListener("click", function () {
-        localStorage.removeItem(cartKey);
+      document.getElementById("clear-cart").addEventListener("click", async function () {
+        cart = [];
+        await saveCart();
         location.reload();
       });
     }
