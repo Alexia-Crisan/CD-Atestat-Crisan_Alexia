@@ -15,8 +15,7 @@ const modalOverlay = document.getElementById("modal-overlay");
 const toast        = document.getElementById("toast");
 
 document.getElementById("logout-btn").addEventListener("click", async () => {
-  await signOut(auth);
-  window.location.href = "./login.html";
+  await signOut(auth); window.location.href = "./login.html";
 });
 document.getElementById("modal-close").addEventListener("click", closeModal);
 modalOverlay.addEventListener("click", (e) => { if (e.target === modalOverlay) closeModal(); });
@@ -24,8 +23,7 @@ searchInput.addEventListener("input", renderTable);
 filterSelect.addEventListener("change", renderTable);
 
 function showToast(msg, type = "success") {
-  toast.textContent = msg;
-  toast.className = "show " + type;
+  toast.textContent = msg; toast.className = "show " + type;
   setTimeout(() => { toast.className = ""; }, 3000);
 }
 
@@ -54,14 +52,13 @@ async function loadUsers() {
   try {
     const snap = await getDocs(collection(db, "users"));
     allUsers = snap.docs.map(d => ({ uid: d.id, ...d.data() }));
-    updateStats();
-    renderTable();
+    updateStats(); renderTable();
   } catch (err) { showToast("Failed to load users", "error"); console.error(err); }
 }
 
 function updateStats() {
-  const total    = allUsers.length;
-  const admins   = allUsers.filter(u => u.isAdmin).length;
+  const total = allUsers.length;
+  const admins = allUsers.filter(u => u.isAdmin).length;
   const withCart = allUsers.filter(u => getCart(u).length > 0).length;
   let totalValue = 0;
   allUsers.forEach(u => getCart(u).forEach(i => { totalValue += i.price * i.quantity; }));
@@ -145,10 +142,6 @@ function openModal(uid) {
 
   document.getElementById("modal-actions").innerHTML = `
     ${cart.length > 0 ? `<button class="modal-btn orange" onclick="window._clearCart('${u.uid}')"><i class="fa-solid fa-cart-arrow-down"></i> Clear Cart</button>` : ""}
-    ${u.isAdmin
-      ? `<button class="modal-btn orange" onclick="window._admin('${u.uid}',false)"><i class="fa-solid fa-user-minus"></i> Remove Admin</button>`
-      : `<button class="modal-btn green" onclick="window._admin('${u.uid}',true)"><i class="fa-solid fa-shield-halved"></i> Make Admin</button>`
-    }
     ${!isMe ? `<button class="modal-btn red" onclick="window._delete('${u.uid}')"><i class="fa-solid fa-trash"></i> Delete User</button>` : ""}
     <button class="modal-btn ghost" onclick="window._close()">Close</button>
   `;
@@ -163,22 +156,21 @@ window._close = closeModal;
 window._admin = async (uid, makeAdmin) => {
   try {
     await updateDoc(doc(db, "users", uid), { isAdmin: makeAdmin });
-    const u = allUsers.find(u => u.uid === uid); if (u) u.isAdmin = makeAdmin;
+    const u = allUsers.find(u => u.uid === uid);
+    if (u) u.isAdmin = makeAdmin;
     updateStats(); renderTable();
-    showToast(makeAdmin ? "User promoted to admin" : "Admin privileges removed");
-    if (selectedUser?.uid === uid) openModal(uid);
-  } catch (err) { showToast("Failed", "error"); console.error(err); }
+  } catch (err) { showToast("Failed to update role", "error"); console.error(err); }
 };
 
 window._clearCart = async (uid) => {
   if (!confirm("Clear this user's cart?")) return;
   try {
     await updateDoc(doc(db, "users", uid), { cart: [] });
-    const u = allUsers.find(u => u.uid === uid); if (u) u.cart = [];
+    const u = allUsers.find(u => u.uid === uid);
+    if (u) u.cart = [];
     updateStats(); renderTable();
-    showToast("Cart cleared");
     if (selectedUser?.uid === uid) openModal(uid);
-  } catch (err) { showToast("Failed", "error"); console.error(err); }
+  } catch (err) { showToast("Failed to clear cart", "error"); console.error(err); }
 };
 
 window._delete = async (uid) => {
@@ -188,6 +180,5 @@ window._delete = async (uid) => {
     await deleteDoc(doc(db, "users", uid));
     allUsers = allUsers.filter(u => u.uid !== uid);
     updateStats(); renderTable(); closeModal();
-    showToast("User deleted");
-  } catch (err) { showToast("Failed", "error"); console.error(err); }
+  } catch (err) { showToast("Failed to delete user", "error"); console.error(err); }
 };
