@@ -1,3 +1,10 @@
 serviceAccountKey.jsonnode_modules/
 serviceAccountKey.json
 serviceAccountKey.json
+
+# Firebase service account — NEVER commit this
+serviceAccountKey.json
+
+# Node
+node_modules/
+package-lock.json

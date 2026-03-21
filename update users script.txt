@@ -1,0 +1,29 @@
+SYNC USERS SCRIPT — INSTRUCTIONS
+=================================
+
+This script (JS/syncUsers.js) creates Firestore documents for users who
+registered before the automatic Firestore signup code was added.
+It only needs to be run ONCE. All new signups create their documents automatically.
+
+SETUP
+-----
+1. Go to Firebase Console → Project Settings → Service accounts
+2. Click "Generate new private key" → "Generate key"
+3. Rename the downloaded file to: serviceAccountKey.json
+4. Place it in the ROOT of the project (same folder as home.html)
+
+RUN
+---
+Open a terminal in the project root and run:
+
+    npm init -y
+    npm install firebase-admin
+    node JS/syncUsers.js
+
+The script will print each user it processes. When done it prints "Sync complete".
+
+AFTER RUNNING
+-------------
+- You can delete serviceAccountKey.json (or keep it locally, never commit it)
+- You can delete this file and syncUsers.js — they are no longer needed
+- All future signups automatically create their Firestore document via signup.js

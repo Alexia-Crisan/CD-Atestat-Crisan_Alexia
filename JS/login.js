@@ -3,7 +3,6 @@ import {
   signInWithEmailAndPassword,
   setPersistence,
   browserLocalPersistence,
-  browserSessionPersistence,
   onAuthStateChanged,
   signOut,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
@@ -13,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       document.getElementById("login-form").style.display = "none";
-
       const msg = document.getElementById("already-logged-in");
       msg.style.display = "block";
       msg.querySelector("#logged-in-name").textContent = user.displayName || user.email;
@@ -28,7 +26,6 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("login-btn").addEventListener("click", async () => {
     const email    = document.getElementById("email").value.trim();
     const password = document.getElementById("password").value;
-    const remember = document.getElementById("remember").checked;
     const errorMsg = document.getElementById("error-msg");
 
     errorMsg.style.display = "none";
@@ -42,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       await setPersistence(auth, browserLocalPersistence);
       await signInWithEmailAndPassword(auth, email, password);
-      window.location.href = "../home.html";
+      window.location.href = "./home.html";
     } catch (err) {
       errorMsg.style.display = "block";
       switch (err.code) {
