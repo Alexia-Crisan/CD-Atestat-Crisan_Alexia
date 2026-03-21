@@ -3,15 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Admin Panel – UniEssentials</title>
+    <title>Admin Panel</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./admin.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
   <body>
-
     <div class="navwhole">
       <div class="navbar">
         <div class="navbrand">
@@ -20,33 +28,56 @@
           <span class="admin-badge">Admin</span>
         </div>
         <div class="navlinks">
-          <a href="./home.html"><i class="fa-solid fa-house"></i> Back to site</a>
-          <button class="btn-logout" id="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
+          <a href="./home.html"
+            ><i class="fa-solid fa-house"></i> Back to site</a
+          >
+          <button class="btn-logout" id="logout-btn">
+            <i class="fa-solid fa-right-from-bracket"></i> Log out
+          </button>
         </div>
       </div>
     </div>
 
-    <div id="loading"><div class="spinner"></div><p>Verifying access...</p></div>
+    <div id="loading">
+      <div class="spinner"></div>
+      <p>Verifying access...</p>
+    </div>
 
-    <div id="access-denied" style="display:none;">
+    <div id="access-denied" style="display: none">
       <i class="fa-solid fa-ban"></i>
       <h2>Access Denied</h2>
       <p>You don't have admin privileges.</p>
-      <a href="./home.html" style="margin-top:12px;">Go back to site</a>
+      <a href="./home.html" style="margin-top: 12px">Go back to site</a>
     </div>
 
-    <div id="dashboard" style="display:none;">
+    <div id="dashboard" style="display: none">
       <div class="stats-row">
-        <div class="stat-card"><span class="stat-label">Total Users</span><span class="stat-value" id="stat-total">—</span></div>
-        <div class="stat-card"><span class="stat-label">Admin Users</span><span class="stat-value" id="stat-admins">—</span></div>
-        <div class="stat-card"><span class="stat-label">Users with Cart Items</span><span class="stat-value" id="stat-carts">—</span></div>
-        <div class="stat-card"><span class="stat-label">Total Cart Value</span><span class="stat-value" id="stat-value">—</span></div>
+        <div class="stat-card">
+          <span class="stat-label">Total Users</span
+          ><span class="stat-value" id="stat-total">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Admin Users</span
+          ><span class="stat-value" id="stat-admins">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Users with Cart Items</span
+          ><span class="stat-value" id="stat-carts">—</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">Total Cart Value</span
+          ><span class="stat-value" id="stat-value">—</span>
+        </div>
       </div>
 
       <div class="toolbar">
         <div class="search-wrap">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="search-input" placeholder="Search by name or email..." />
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search by name or email..."
+          />
         </div>
         <select class="filter-select" id="filter-select">
           <option value="all">All users</option>
@@ -56,9 +87,20 @@
       </div>
 
       <div class="table-box">
-        <div class="table-box-header"><h2>Users</h2><span id="user-count"></span></div>
+        <div class="table-box-header">
+          <h2>Users</h2>
+          <span id="user-count"></span>
+        </div>
         <table>
-          <thead><tr><th>User</th><th>Role</th><th>Cart</th><th>Registered</th><th>Actions</th></tr></thead>
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Role</th>
+              <th>Cart</th>
+              <th>Registered</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
           <tbody id="user-table-body"></tbody>
         </table>
       </div>
@@ -67,20 +109,41 @@
     <div class="modal-overlay" id="modal-overlay">
       <div class="modal">
         <div class="modal-header">
-          <div><h3 id="modal-name"></h3><p id="modal-uid"></p></div>
-          <button class="modal-close" id="modal-close"><i class="fa-solid fa-xmark"></i></button>
+          <div>
+            <h3 id="modal-name"></h3>
+            <p id="modal-uid"></p>
+          </div>
+          <button class="modal-close" id="modal-close">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
         </div>
         <div class="modal-body">
           <div class="info-grid">
-            <div class="info-item"><label>Email</label><p id="modal-email"></p></div>
-            <div class="info-item"><label>Role</label><p id="modal-role"></p></div>
-            <div class="info-item"><label>Registered</label><p id="modal-created"></p></div>
-            <div class="info-item"><label>Cart Items</label><p id="modal-cart-count"></p></div>
+            <div class="info-item">
+              <label>Email</label>
+              <p id="modal-email"></p>
+            </div>
+            <div class="info-item">
+              <label>Role</label>
+              <p id="modal-role"></p>
+            </div>
+            <div class="info-item">
+              <label>Registered</label>
+              <p id="modal-created"></p>
+            </div>
+            <div class="info-item">
+              <label>Cart Items</label>
+              <p id="modal-cart-count"></p>
+            </div>
           </div>
           <div class="cart-section">
-            <h4><i class="fa-solid fa-cart-shopping"></i> &nbsp;Cart Contents</h4>
+            <h4>
+              <i class="fa-solid fa-cart-shopping"></i> &nbsp;Cart Contents
+            </h4>
             <div id="modal-cart-items"></div>
-            <div class="cart-total" id="modal-cart-total" style="display:none;">Total: <span id="modal-total-value"></span></div>
+            <div class="cart-total" id="modal-cart-total" style="display: none">
+              Total: <span id="modal-total-value"></span>
+            </div>
           </div>
         </div>
         <div class="modal-actions" id="modal-actions"></div>
@@ -90,18 +153,37 @@
     <div id="toast"></div>
 
     <div class="footerdiv">
-      <div class="footerdivhalf" style="justify-content:flex-end">
-        <p style="font-size:20px; text-align:right"><a href="mailto:uniessentials@gmail.com" style="font-size:20px">uniessentials@gmail.com</a></p>
+      <div class="footerdivhalf" style="justify-content: flex-end">
+        <p style="font-size: 20px; text-align: right">
+          <a href="mailto:uniessentials@gmail.com" style="font-size: 20px"
+            >uniessentials@gmail.com</a
+          >
+        </p>
       </div>
-      <div class="footerdivhalf" style="padding-right:20px; flex-direction:row; justify-content:flex-start;">
-        <a href="https://www.facebook.com/profile.php?id=61566470451000&locale=ro_RO" class="fa-brands fa-facebook"></a>
-        <a href="https://www.instagram.com/uniessentials/" class="fa-brands fa-instagram"></a>
+      <div
+        class="footerdivhalf"
+        style="
+          padding-right: 20px;
+          flex-direction: row;
+          justify-content: flex-start;
+        "
+      >
+        <a
+          href="https://www.facebook.com/profile.php?id=61566470451000&locale=ro_RO"
+          class="fa-brands fa-facebook"
+        ></a>
+        <a
+          href="https://www.instagram.com/uniessentials/"
+          class="fa-brands fa-instagram"
+        ></a>
         <a href="https://pin.it/5JiIFfCrw" class="fa-brands fa-pinterest"></a>
-        <a href="https://www.youtube.com/@Uniessentials" class="fa-brands fa-youtube"></a>
+        <a
+          href="https://www.youtube.com/@Uniessentials"
+          class="fa-brands fa-youtube"
+        ></a>
       </div>
     </div>
 
     <script type="module" src="./JS/admin.js"></script>
-
   </body>
 </html>
